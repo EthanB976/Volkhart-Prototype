@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     //Listening to the Crop.onPlantCrop event.
     public void OnPlantCrop(CropData crop)
     {
-
+        
     }
 
     //Called when a crop has been harvested.
@@ -33,12 +33,15 @@ public class GameManager : MonoBehaviour
     {
 
     }
-
-    //Do we have enough seeds to plant?
-   /* public bool CanPlantCrop()
+    private void OnEnable()
     {
+        Crop.OnPlantCrop += OnPlantCrop;
+        Crop.OnHarvestCrop += OnHarvestCrop;
+    }
 
-    }    
-   */
-
+    private void OnDisable()
+    {
+        Crop.OnPlantCrop -= OnPlantCrop;
+        Crop.OnHarvestCrop -= OnHarvestCrop;
+    }
 }

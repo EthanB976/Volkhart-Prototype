@@ -6,7 +6,7 @@ public class CropData : ScriptableObject
 {
     public int timeToGrow;
     public Sprite[] growProgressSprites;
-    public Sprite[] readyToHarvestSprite;
+    public Sprite readyToHarvestSprite;
 
     public int hungerFilled;
 
