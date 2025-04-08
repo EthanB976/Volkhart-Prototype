@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 114704736}
   - component: {fileID: 114704735}
   m_Layer: 0
-  m_Name: AlienIdle_0
+  m_Name: Alien Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
