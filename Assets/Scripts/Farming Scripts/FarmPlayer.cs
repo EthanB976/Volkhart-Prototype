@@ -16,10 +16,10 @@ public class FarmPlayer : MonoBehaviour
     {
         Vector2 spawnLocation = transform.position;
 
-        Vector2 spawnOffset = Random.insideUnitCircle * 1.25f;
+        Vector2 spawnOffset = Random.insideUnitCircle * 3.5f;
 
         Collectable droppedItem = Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity);
 
-        droppedItem.rb.AddForce(spawnOffset * 0.2f, ForceMode2D.Impulse);
+        droppedItem.rb.AddForce(spawnOffset * 1f, ForceMode2D.Impulse);
     }
 }
