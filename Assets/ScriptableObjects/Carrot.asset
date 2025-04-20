@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c95ce965a947d4a88964701e0f718f, type: 3}
-  m_Name: Wheat
+  m_Script: {fileID: 11500000, guid: e298b4e32d42a404089f4e2d2366173e, type: 3}
+  m_Name: Carrot
   m_EditorClassIdentifier: 
-  timeToGrow: 0
-  growProgressSprites: []
-  readyToHarvestSprite: []
-  hungerFilled: 40
+  itemName: Carrot
+  ItemID: 3
+  itemIcon: {fileID: 7482667652216324306, guid: b8c0a0c21805ec6489df6b2089659938, type: 3}
+  isStackable: 1
+  healthAdded: 10
