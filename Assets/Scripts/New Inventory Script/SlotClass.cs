@@ -42,6 +42,10 @@ public class SlotClass
     public void SubQuantity(int _quantity)
     {
         quantity -= _quantity;
+        if (quantity <= 0)
+        {
+            Clear();
+        }    
     }
 
     public void AddItem(ItemClass item, int quantity)
