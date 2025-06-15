@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AlienBase : MonoBehaviour
@@ -9,6 +11,26 @@ public class AlienBase : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     [SerializeField] private Animator Alien;
+
+    public List<LayerMask> dectectionLayers;
+    [SerializeField] private float targetDetection 5f;
+
+
+    private void Update()
+    {
+        DetectPlayer();
+    }
+
+
+    private void DetectPlayer()
+    {
+        foreach (var layer in dectectionLayers)
+        {
+            Collider2D hitcolliders = Physics2D.OverlapCircle(transform.position, targetDetection, layer);
+
+        }
+    }
+
 
     public void TakeDamage(float damage)
     {
@@ -23,8 +45,9 @@ public class AlienBase : MonoBehaviour
 
     IEnumerator SlimeDamage()
     {
+        
+        yield return new WaitForSeconds(0.25f);
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        yield return new WaitForSeconds(0.15f);
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
