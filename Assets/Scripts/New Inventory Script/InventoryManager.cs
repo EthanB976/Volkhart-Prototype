@@ -31,6 +31,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private int selectedSlotIndex = 0;
     public ItemClass selectedItem;
 
+    [SerializeField] private List<CraftingRecipeClass> craftingRecipes = new List<CraftingRecipeClass>();
+
     private void Start()
     {
         slots = new GameObject[slotHolder.transform.childCount];
@@ -47,20 +49,21 @@ public class InventoryManager : MonoBehaviour
             items[i] = new SlotClass();
         }
 
-        for (int i = 0; i < startingItems.Length; i++)
-        {
-            items[i] = startingItems[i];
-        }
-
         //sets all the slots
         for (int i = 0; i < slotHolder.transform.childCount; i++)
         {
             slots[i] = slotHolder.transform.GetChild(i).gameObject;
         }
 
+        //Add items
+        for (int i = 0; i < startingItems.Length; i++)
+        {
+            AddItem(startingItems[i].item, startingItems[i].quantity);
+        }
+
         RefreshUI();
-        AddItem(itemToAdd, 1);
-        RemoveItem(itemToRemove);
+        // AddItem(itemToAdd, 1); - Used for testing
+        // RemoveItem(itemToRemove); - Used for testing
     }
 
     private void Update()
@@ -96,7 +99,7 @@ public class InventoryManager : MonoBehaviour
         itemCursor.transform.position = Input.mousePosition;
         if (isMovingItem)
         {
-            itemCursor.GetComponent<Image>().sprite = movingSlot.GetItem().itemIcon;
+            itemCursor.GetComponent<Image>().sprite = movingSlot.item.itemIcon;
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0) //Scrolling up
@@ -109,7 +112,12 @@ public class InventoryManager : MonoBehaviour
         }
 
         hotbarSelector.transform.position = hotbarSlots[selectedSlotIndex].transform.position;
-        selectedItem = items[selectedSlotIndex + (hotbarSlots.Length * 3)].GetItem();
+        selectedItem = items[selectedSlotIndex + (hotbarSlots.Length * 3)].item;
+
+        if (Input.GetKeyDown(KeyCode.C)) //Handles Crafting atm
+        {
+            Craft(craftingRecipes[0]);
+        }
     }
 
     #region Inventory Untils
@@ -120,10 +128,10 @@ public class InventoryManager : MonoBehaviour
             try
             {
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i].GetItem().itemIcon;
-                if (items[i].GetItem().isStackable)
+                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i].item.itemIcon;
+                if (items[i].item.isStackable)
                 {
-                    slots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = items[i].GetQuantity().ToString();
+                    slots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = items[i].quantity.ToString();
                 }
                 else
                 {
@@ -150,11 +158,11 @@ public class InventoryManager : MonoBehaviour
             try
             {
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-                hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i + (hotbarSlots.Length * 3)].GetItem().itemIcon;
+                hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i + (hotbarSlots.Length * 3)].item.itemIcon;
 
-                if (items[i + (hotbarSlots.Length * 3)].GetItem().isStackable)
+                if (items[i + (hotbarSlots.Length * 3)].item.isStackable)
                 {
-                    hotbarSlots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = items[i + (hotbarSlots.Length * 3)].GetQuantity().ToString();
+                    hotbarSlots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = items[i + (hotbarSlots.Length * 3)].quantity.ToString();
                 }
                 else
                 {
@@ -175,22 +183,38 @@ public class InventoryManager : MonoBehaviour
     public bool AddItem(ItemClass item, int quantity)
     {
         //Check if inventory contains item being added already
-
-        //Check if item is stackable
-
         SlotClass slot = Contains(item);
-        if (slot != null && slot.GetItem().isStackable)
+
+        if (slot != null && slot.item.isStackable && slot.quantity < item.stackSize)
         {
-            slot.AddQuantity(quantity);
+            //Make sure items are split upon being added to inventory depending on stack size max
+            var quantityCanAdd = slot.item.stackSize - slot.quantity;
+            var quantityToAdd = Mathf.Clamp(quantity, 0, quantityCanAdd);
+
+            var remainder = quantity - quantityCanAdd;
+
+            slot.AddQuantity(quantityToAdd);
+            if (remainder > 0)
+            {
+                AddItem(item, remainder);
+            }
         }
         else
         {
-
-            for (int i = 0; i < slots.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
-                if (items[i].GetItem() == null) //This is an empty slot
+                if (items[i].item == null)
                 {
-                    items[i].AddItem(item, quantity);
+                    var quantityCanAdd = item.stackSize - items[i].quantity;
+                    var quantityToAdd = Mathf.Clamp(quantity, 0, quantityCanAdd);
+
+                    var remainder = quantity - quantityCanAdd;
+
+                    items[i].AddItem(item, quantityToAdd);
+                    if (remainder > 0)
+                    {
+                        AddItem(item, remainder);
+                    }
                     break;
                 }
             }
@@ -207,7 +231,7 @@ public class InventoryManager : MonoBehaviour
         SlotClass temp = Contains(item);
         if (temp != null)
         {
-            if (temp.GetQuantity() > 1)
+            if (temp.quantity > 1)
             {
                 temp.SubQuantity(1);
             }
@@ -217,7 +241,42 @@ public class InventoryManager : MonoBehaviour
 
                 for (int i = 0; i < items.Length; i++)
                 {
-                    if (items[i].GetItem() == item)
+                    if (items[i].item == item)
+                    {
+                        slotToRemoveIndex = i;
+                        break;
+                    }
+                }
+
+                items[slotToRemoveIndex].Clear();
+            }
+
+        }
+        else
+        {
+            return false;
+        }
+
+        RefreshUI();
+        return true;
+    }
+
+    public bool RemoveItemRecipe(ItemClass item, int quantity)
+    {
+        SlotClass temp = Contains(item);
+        if (temp != null)
+        {
+            if (temp.quantity > 1)
+            {
+                temp.SubQuantity(quantity);
+            }
+            else
+            {
+                int slotToRemoveIndex = 0;
+
+                for (int i = 0; i < items.Length; i++)
+                {
+                    if (items[i].item == item)
                     {
                         slotToRemoveIndex = i;
                         break;
@@ -239,7 +298,7 @@ public class InventoryManager : MonoBehaviour
 
     public void UseSelected()
     {
-        items[selectedSlotIndex + (hotbarSlots.Length *3)].SubQuantity(1);
+        items[selectedSlotIndex + (hotbarSlots.Length * 3)].SubQuantity(1);
         RefreshUI();
     }
 
@@ -247,13 +306,36 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-            if (items[i].GetItem() == item)
-            {
+            if (items[i].item == item /*&& items[i].item.isStackable && */)
                 return items[i];
-            }
         }
 
         return null;
+    }
+
+    public bool ContainsRecipe(ItemClass item, int quantity)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i].item == item && items[i].quantity >= quantity)
+
+                return true;
+
+        }
+
+        return false;
+    }
+
+    public bool isFull()
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i].item == null)
+            {
+                return false;
+            }
+        }
+        return true;
     }
     #endregion Inventory Utils
 
@@ -262,7 +344,7 @@ public class InventoryManager : MonoBehaviour
     private bool BeginItemMove()
     {
         originalSlot = GetClosestSlot();
-        if (originalSlot == null || originalSlot.GetItem() == null)
+        if (originalSlot == null || originalSlot.item == null)
         {
             return false; //There is no item to move
         }
@@ -277,16 +359,17 @@ public class InventoryManager : MonoBehaviour
     private bool BeginItemMove_Half()
     {
         originalSlot = GetClosestSlot();
-        if (originalSlot == null || originalSlot.GetItem() == null)
+        if (originalSlot == null || originalSlot.item == null)
         {
             return false; //There is item to move
         }
 
-        movingSlot = new SlotClass(originalSlot.GetItem(), Mathf.CeilToInt(originalSlot.GetQuantity() / 2));
-        originalSlot.SubQuantity(Mathf.CeilToInt(originalSlot.GetQuantity() / 2));
-        if (originalSlot.GetQuantity() == 0)
+        movingSlot = new SlotClass(originalSlot.item, Mathf.CeilToInt(originalSlot.quantity / 2f));
+        originalSlot.SubQuantity(Mathf.CeilToInt(originalSlot.quantity / 2f));
+        if (originalSlot.quantity == 0)
         {
             originalSlot.Clear();
+            //RefreshUI();
         }
         isMovingItem = true;
         RefreshUI();
@@ -298,31 +381,37 @@ public class InventoryManager : MonoBehaviour
         originalSlot = GetClosestSlot();
         if (originalSlot == null)
         {
-            AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
+            AddItem(movingSlot.item, movingSlot.quantity);
             movingSlot.Clear();
         }
         else
         {
 
-            if (originalSlot.GetItem() != null)
+            if (originalSlot.item != null)
             {
-                if (originalSlot.GetItem() == movingSlot.GetItem()) //They're the same item so should stack
+                if (originalSlot.item == movingSlot.item && originalSlot.item.isStackable && originalSlot.quantity < originalSlot.item.stackSize) //They're the same item so should stack
                 {
-                    if (originalSlot.GetItem().isStackable)
+                    var quantityCanAdd = originalSlot.item.stackSize - originalSlot.quantity;
+                    var quantityToAdd = Mathf.Clamp(movingSlot.quantity, 0, quantityCanAdd);
+                    var remainder = movingSlot.quantity - quantityToAdd;
+                    originalSlot.AddQuantity(quantityToAdd);
+                    if (remainder == 0)
                     {
-                        originalSlot.AddQuantity(movingSlot.GetQuantity());
                         movingSlot.Clear();
                     }
                     else
                     {
+                        movingSlot.SubQuantity(quantityCanAdd);
+                        RefreshUI();
                         return false;
+
                     }
                 }
                 else
                 {
                     tempSlot = new SlotClass(originalSlot); // a = b
-                    originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity()); // b = c
-                    movingSlot.AddItem(tempSlot.GetItem(), tempSlot.GetQuantity()); // a = c
+                    originalSlot.AddItem(movingSlot.item, movingSlot.quantity); // b = c
+                    movingSlot.AddItem(tempSlot.item, tempSlot.quantity); // a = c
 
                     RefreshUI();
                     return true;
@@ -331,7 +420,7 @@ public class InventoryManager : MonoBehaviour
             }
             else //Place item as usual
             {
-                originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
+                originalSlot.AddItem(movingSlot.item, movingSlot.quantity);
                 movingSlot.Clear();
             }
         }
@@ -349,26 +438,27 @@ public class InventoryManager : MonoBehaviour
         {
             return false; //There is no item to move
         }
-        if (originalSlot.GetItem() != null && originalSlot.GetItem() != movingSlot.GetItem())
+        if (originalSlot.item != null && (originalSlot.item != movingSlot.item || originalSlot.quantity >= originalSlot.item.stackSize))
         {
             return false;
         }
 
         movingSlot.SubQuantity(1);
-        if (originalSlot.GetItem() != null && originalSlot.GetItem() == movingSlot.GetItem())
+        if (originalSlot.item != null && originalSlot.item == movingSlot.item)
         {
             originalSlot.AddQuantity(1);
         }
         else
         {
-            originalSlot.AddItem(movingSlot.GetItem(), 1);
+            originalSlot.AddItem(movingSlot.item, 1);
         }
 
 
-        if (movingSlot.GetQuantity() < 1)
+        if (movingSlot.quantity < 1)
         {
             isMovingItem = false;
             movingSlot.Clear();
+            //RefreshUI();
         }
         else
         {
@@ -396,4 +486,15 @@ public class InventoryManager : MonoBehaviour
     }
 
     #endregion Movement Stuff
+
+    private void Craft(CraftingRecipeClass recipe)
+    {
+        if (recipe.CanCraft(this))
+            recipe.Craft(this);
+        else
+        {
+            Debug.Log("Cannout Craft Item");
+        }
+
+    }
 }

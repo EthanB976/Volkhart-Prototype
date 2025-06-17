@@ -10,6 +10,7 @@ public class ItemClass : ScriptableObject
     public float ItemID;
     public Sprite itemIcon;
     public bool isStackable = true;
+    public int stackSize = 99;
 
 
     public virtual void Use(PlayerBase caller)

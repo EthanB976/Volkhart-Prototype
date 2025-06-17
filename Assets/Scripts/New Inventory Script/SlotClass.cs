@@ -5,14 +5,17 @@ using System.Collections;
 [System.Serializable]
 public class SlotClass
 {
-   [SerializeField] private ItemClass item;
-   [SerializeField] private int quantity;
+    [field: SerializeField] public ItemClass item { get; private set; } = null;
+    [field: SerializeField] public int quantity { get; private set; } = 0;
+
 
     public SlotClass()
     {
         item = null;
         quantity = 0;
     }
+
+
     public SlotClass(ItemClass _item, int _quantity)
     {
         item = _item;
@@ -24,15 +27,17 @@ public class SlotClass
         quantity = slot.quantity;
     }
 
+   /* 
     public ItemClass GetItem()
     {
         return item;
-    }
+    } 
 
     public int GetQuantity()
     {
         return quantity;
     }
+   */
 
     public void AddQuantity(int _quantity)
     {
@@ -45,7 +50,7 @@ public class SlotClass
         if (quantity <= 0)
         {
             Clear();
-        }    
+        }
     }
 
     public void AddItem(ItemClass item, int quantity)
