@@ -5,6 +5,9 @@ public class CraftingRecipeClass : ScriptableObject
 {
     public SlotClass[] inputItems;
     public SlotClass outputItem;
+    public SlotClass inputItems1;
+    public SlotClass inputItems2;
+    public SlotClass inputItems3;
 
     public bool CanCraft(InventoryManager inventory)
     {

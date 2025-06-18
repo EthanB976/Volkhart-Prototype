@@ -32,6 +32,8 @@ public class InventoryManager : MonoBehaviour
     public ItemClass selectedItem;
 
     [SerializeField] private List<CraftingRecipeClass> craftingRecipes = new List<CraftingRecipeClass>();
+    public GameObject inventory;
+
 
     private void Start()
     {
@@ -68,30 +70,41 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))// We Left Click
+        if (inventory.activeSelf == true)
         {
-            //Find closest slot (Slot that is clicked)
-            if (isMovingItem)
+            if (Input.GetMouseButtonDown(0))// We Left Click
+            {
+                //Find closest slot (Slot that is clicked)
+                if (isMovingItem)
+                {
+                    EndItemMove();
+                }
+                else
+                {
+                    BeginItemMove();
+                }
+
+            }
+            else if (Input.GetMouseButtonDown(1))//We Right Click
+            {
+                //Find closest slot (Slot that is clicked)
+                if (isMovingItem)
+                {
+                    EndItemMove_Single();
+                }
+                else
+                {
+                    BeginItemMove_Half();
+
+                }
+            }
+        }
+        if (inventory.activeSelf == false)
+        {
+            if (isMovingItem == true)
             {
                 EndItemMove();
-            }
-            else
-            {
-                BeginItemMove();
-            }
-
-        }
-        else if (Input.GetMouseButtonDown(1))//We Right Click
-        {
-            //Find closest slot (Slot that is clicked)
-            if (isMovingItem)
-            {
                 EndItemMove_Single();
-            }
-            else
-            {
-                BeginItemMove_Half();
-
             }
         }
 
