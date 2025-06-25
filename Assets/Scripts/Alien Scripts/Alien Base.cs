@@ -115,7 +115,7 @@ public class AlienBase : MonoBehaviour
         }
     }
 
-    IEnumerator SlimeDamage(float duration)
+    public IEnumerator SlimeDamage(float duration)
     {
         stunned = true;
         rb.linearVelocity = Vector2.zero;

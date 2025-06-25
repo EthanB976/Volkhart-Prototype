@@ -130,7 +130,11 @@ GameObject:
   - component: {fileID: 114704734}
   - component: {fileID: 114704737}
   - component: {fileID: 114704736}
+  - component: {fileID: 114704739}
+  - component: {fileID: 114704738}
   - component: {fileID: 114704735}
+  - component: {fileID: 114704741}
+  - component: {fileID: 114704740}
   m_Layer: 8
   m_Name: Alien Body
   m_TagString: Enemy
@@ -251,6 +255,133 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &114704738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114704733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60606c7b31c1dc45a8bd3b3646a0b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  speed: 3
+  damage: 5
+  rb: {fileID: 114704741}
+  Alien: {fileID: 114704736}
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  targetDetection: 5
+  playerTransform: {fileID: 0}
+  wanderRange: 3.5
+  wanderTimer: 10
+  wanderTarget: {x: 0, y: 0}
+  isWaiting: 0
+  hasTarget: 0
+  stop: 0
+  stunned: 0
+--- !u!114 &114704739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114704733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d1aaba642bce646a7458c00be50ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
+  Rigidbody2D: {fileID: 0}
+  alienBase: {fileID: 0}
+--- !u!60 &114704740
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114704733}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.07, y: 0.19999999}
+      - {x: -0.07, y: 0.19999999}
+      - {x: -0.14, y: 0.12}
+      - {x: -0.14, y: -0.14}
+      - {x: -0.089999996, y: -0.22}
+      - {x: 0.099999994, y: -0.22}
+      - {x: 0.14999999, y: -0.13}
+      - {x: 0.14999999, y: 0.03}
+      - {x: 0.14, y: 0.14999999}
+  m_UseDelaunayMesh: 0
+--- !u!50 &114704741
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114704733}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &278417339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 512045532462242205, guid: 9b2c43488483e134a80174af36b39e5a, type: 3}
@@ -295,6 +426,21 @@ MonoBehaviour:
   hasTarget: 0
   stop: 0
   stunned: 0
+--- !u!114 &278417349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278417339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d1aaba642bce646a7458c00be50ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
+  Rigidbody2D: {fileID: 0}
+  alienBase: {fileID: 0}
 --- !u!1 &352106000
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,10 +457,11 @@ GameObject:
   - component: {fileID: 352106003}
   - component: {fileID: 352106002}
   - component: {fileID: 352106008}
+  - component: {fileID: 352106010}
   - component: {fileID: 352106009}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,6 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f463b8cdf6f0a45897c2397e4bfdde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStunned: 0
 --- !u!95 &352106003
 Animator:
   serializedVersion: 7
@@ -415,6 +563,7 @@ MonoBehaviour:
   animator: {fileID: 352106003}
   Aim: {fileID: 1639927249}
   Weapon: {fileID: 1647215074}
+  isStunned: 0
 --- !u!50 &352106006
 Rigidbody2D:
   serializedVersion: 5
@@ -598,6 +747,25 @@ PolygonCollider2D:
       - {x: -0.22, y: -1.04}
       - {x: 0.21, y: -1.04}
   m_UseDelaunayMesh: 0
+--- !u!114 &352106010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352106000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 507348b81d0676545bb137beb1d9f579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  speed: 5
+  damage: 5
+  stunned: 0
+  rb2d: {fileID: 352106006}
+  playerMovement: {fileID: 352106005}
+  lefttoRightMovement: {fileID: 0}
 --- !u!1001 &480310132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,6 +846,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 512045532462242205, guid: 9b2c43488483e134a80174af36b39e5a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 278417345}
+    - targetCorrespondingSourceObject: {fileID: 512045532462242205, guid: 9b2c43488483e134a80174af36b39e5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 278417349}
   m_SourcePrefab: {fileID: 100100000, guid: 9b2c43488483e134a80174af36b39e5a, type: 3}
 --- !u!1 &483531113
 GameObject:
@@ -1328,7 +1499,7 @@ GameObject:
   - component: {fileID: 2027253804}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

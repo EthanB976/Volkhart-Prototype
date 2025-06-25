@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,18 +14,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform Aim;
     [SerializeField] private Transform Weapon;
 
+    [SerializeField] private bool isStunned = false;
 
     private void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (!isStunned)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        RotateAim();
+            RotateAim();
+        }
+        
     }
 
     private void RotateAim()
@@ -39,6 +45,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb2d.MovePosition(rb2d.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (!isStunned)
+        {
+            rb2d.MovePosition(rb2d.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
+        
+    }
+
+    public void Stunned()
+    {
+        isStunned = true;
+    }
+
+    public void NotStunned()
+    {
+        isStunned = false;
     }
 }
