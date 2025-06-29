@@ -455,8 +455,16 @@ public class InventoryManager : MonoBehaviour
         {
             return false;
         }
-
-        movingSlot.SubQuantity(1);
+        
+        if (isMovingItem == false)
+        {
+            movingSlot.SubQuantity(1);
+        }
+        else
+        {
+            movingSlot.SubQuantityMoving(1);
+        }
+        
         if (originalSlot.item != null && originalSlot.item == movingSlot.item)
         {
             originalSlot.AddQuantity(1);
@@ -471,7 +479,8 @@ public class InventoryManager : MonoBehaviour
         {
             isMovingItem = false;
             movingSlot.Clear();
-            //RefreshUI();
+
+            RefreshUI();
         }
         else
         {
@@ -500,7 +509,7 @@ public class InventoryManager : MonoBehaviour
 
     #endregion Movement Stuff
 
-    private void Craft(CraftingRecipeClass recipe)
+    public void Craft(CraftingRecipeClass recipe)
     {
         if (recipe.CanCraft(this))
             recipe.Craft(this);

@@ -8,6 +8,7 @@ public class SlotClass
     [field: SerializeField] public ItemClass item { get; private set; } = null;
     [field: SerializeField] public int quantity { get; private set; } = 0;
 
+    public InventoryManager inventory;
 
     public SlotClass()
     {
@@ -27,17 +28,17 @@ public class SlotClass
         quantity = slot.quantity;
     }
 
-   /* 
-    public ItemClass GetItem()
-    {
-        return item;
-    } 
+    /* 
+     public ItemClass GetItem()
+     {
+         return item;
+     } 
 
-    public int GetQuantity()
-    {
-        return quantity;
-    }
-   */
+     public int GetQuantity()
+     {
+         return quantity;
+     }
+    */
 
     public void AddQuantity(int _quantity)
     {
@@ -46,12 +47,28 @@ public class SlotClass
 
     public void SubQuantity(int _quantity)
     {
+        //Debug.Log("RemoveQuantity: " + _quantity);
         quantity -= _quantity;
         if (quantity <= 0)
         {
-            Clear();
+            //Debug.Log("RemoveQuantity is <= 0 : " + quantity);
+            Clear();      // removed this one 
         }
+
     }
+
+    public void SubQuantityMoving(int _quantity)
+    {
+        //Debug.Log("RemoveQuantity: " + _quantity);
+        quantity -= _quantity;
+        if (quantity <= 0)
+        {
+            //Debug.Log("RemoveQuantity is <= 0 : " + quantity);
+            //Clear();      // removed this one 
+        }
+
+    }
+
 
     public void AddItem(ItemClass item, int quantity)
     {
