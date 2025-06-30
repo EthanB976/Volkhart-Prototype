@@ -1,44 +1,47 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerBase : MonoBehaviour
 {
-    public float playerHealth = 5f;
-    public float maxPlayerHealth = 10f;
+    [SerializeField] private float health = 100f;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float damage = 5f;
+    [SerializeField] private bool stunned = false;
 
-    public InventoryManager inventory;
+    [SerializeField] private Rigidbody2D rb2d;
 
-    private void Update()
+    [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] LefttoRightMovement lefttoRightMovement;
+
+    private void Start()
     {
-        //For Testing Purposes will change later
-        if (Input.GetKeyDown(KeyCode.E))
+        playerMovement = GetComponent<PlayerMovement>();
+        lefttoRightMovement = GetComponent<LefttoRightMovement>();
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        
+        StartCoroutine(PlayerDamage(2f));
+        if (health <= 0)
         {
-            //use this item
-            if (inventory.selectedItem != null && inventory.inventoryUI.activeSelf == false)
-            {
-                inventory.selectedItem.Use(this);
-            }
             
+            //StartCoroutine(PlayerDeath());
         }
 
-        PlayerHealthManager();
     }
 
-    private void PlayerHealthManager()
-    {
-        if (playerHealth >= maxPlayerHealth)
-        {
-            playerHealth = maxPlayerHealth;
-        }
-        if (playerHealth < 0)
-        {
-            //Insert Game Over Code
-        }
-    }
 
-    public void TakeDamage()
+    private IEnumerator PlayerDamage(float duration)
     {
-        //take damage
+        stunned = true;
+        playerMovement.Stunned();
+        lefttoRightMovement.Stunned();
+        yield return new WaitForSeconds(0.25f);
+        playerMovement.NotStunned();
+        lefttoRightMovement.NotStunned();
+        stunned = false;
+
     }
 }
