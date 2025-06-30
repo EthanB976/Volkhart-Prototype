@@ -4434,8 +4434,8 @@ MonoBehaviour:
   recipeCraftingSlots:
   - {fileID: 784540476}
   craftingSlotHolder: {fileID: 2088351424}
-  craftRecipe: {fileID: 0}
-  inventory: {fileID: 0}
+  craftRecipe: {fileID: 11400000, guid: 3879f1ad4869b83419246a6b1ee1b64a, type: 2}
+  inventory: {fileID: 880203916}
 --- !u!4 &676906029
 Transform:
   m_ObjectHideFlags: 0
@@ -5037,10 +5037,10 @@ MonoBehaviour:
   stunned: 0
   rb2d: {fileID: 760585869}
   playerMovement: {fileID: 760585876}
-  lefttoRightMovement: {fileID: 0}
-  inventory: {fileID: 0}
-  attack: {fileID: 0}
-  gunData: {fileID: 0}
+  lefttoRightMovement: {fileID: 760585873}
+  inventory: {fileID: 880203916}
+  attack: {fileID: 760585872}
+  gunData: {fileID: 1432001062}
 --- !u!114 &760585872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5061,8 +5061,8 @@ MonoBehaviour:
   attackDistance: 2
   attackSpeed: 10
   originalLocalPos: {x: 0, y: 0}
-  gunData: {fileID: 0}
-  inventory: {fileID: 0}
+  gunData: {fileID: 1432001062}
+  inventory: {fileID: 880203916}
 --- !u!114 &760585873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6473,7 +6473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   melee: {fileID: 926074612}
-  Rigidbody2D: {fileID: 0}
+  Rigidbody2D: {fileID: 760585869}
 --- !u!1001 &946475879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33989,7 +33989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 320.5081, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1774735109
