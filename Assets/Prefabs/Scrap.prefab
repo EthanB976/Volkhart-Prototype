@@ -27,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194276837427891195}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1048.9119, y: -500.36395, z: 0}
-  m_LocalScale: {x: 1.7760407, y: 1.7760407, z: 1.7760407}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &7286828127925991792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +104,9 @@ MonoBehaviour:
   inventoryManager: {fileID: 0}
   item: {fileID: 11400000, guid: 557f2ae4a32128d41b9649cc452d553a, type: 2}
   amount: 1
+  itemPickedUp: {fileID: 0}
+  itemText: {fileID: 0}
+  itemPickedUpUI: {fileID: 0}
 --- !u!61 &1110215822186856457
 BoxCollider2D:
   m_ObjectHideFlags: 0

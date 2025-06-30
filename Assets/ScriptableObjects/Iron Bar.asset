@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Iron Bar
   m_EditorClassIdentifier: 
   itemName: Iron Bar
-  ItemID: 5
+  ItemID: 6
   itemIcon: {fileID: 21300000, guid: 8acfbb38c682a43448fd2825e61be925, type: 3}
   isStackable: 1
   stackSize: 99

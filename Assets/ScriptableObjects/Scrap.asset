@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Scrap
   m_EditorClassIdentifier: 
   itemName: Scrap
-  ItemID: 2
+  ItemID: 5
   itemIcon: {fileID: 21300000, guid: 1e8d8a366f285444fa62fe2f04998e66, type: 3}
   isStackable: 1
   stackSize: 99

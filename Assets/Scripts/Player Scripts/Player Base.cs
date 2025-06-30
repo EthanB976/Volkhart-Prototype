@@ -61,10 +61,7 @@ public class PlayerBase : MonoBehaviour
         {
             playerHealth = maxPlayerHealth;
         }
-        if (playerHealth < 0)
-        {
-            //Insert Game Over Code
-        }
+       
     }
 
 
