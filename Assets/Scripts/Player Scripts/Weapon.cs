@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
     public GameObject melee;
     public Rigidbody2D Rigidbody2D;
 
-    private void Start()
+    private void Awake()
     {
         melee.SetActive(false);
     }

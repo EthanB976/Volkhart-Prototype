@@ -20,7 +20,7 @@ public class BulletData : MonoBehaviour
     public void Initialize()
     {
         startPosition = transform.position;
-        rb2d.linearVelocity = transform.up * bulletSpeed;
+        rb2d.linearVelocity = transform.right * bulletSpeed;
     }
 
     private void Update()
