@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputItems:
   - <item>k__BackingField: {fileID: 11400000, guid: 557f2ae4a32128d41b9649cc452d553a, type: 2}
-    <quantity>k__BackingField: 5
+    <quantity>k__BackingField: 3
     inventory: {fileID: 0}
   outputItem:
     <item>k__BackingField: {fileID: 11400000, guid: 3dc88e4d8307d184c99e7e9c36c2e57e, type: 2}
@@ -22,7 +22,7 @@ MonoBehaviour:
     inventory: {fileID: 0}
   inputItems1:
     <item>k__BackingField: {fileID: 11400000, guid: 557f2ae4a32128d41b9649cc452d553a, type: 2}
-    <quantity>k__BackingField: 5
+    <quantity>k__BackingField: 3
     inventory: {fileID: 0}
   inputItems2:
     <item>k__BackingField: {fileID: 0}

@@ -8,6 +8,7 @@ public class SlotClass
     [field: SerializeField] public ItemClass item { get; private set; } = null;
     [field: SerializeField] public int quantity { get; private set; } = 0;
 
+
     public InventoryManager inventory;
 
     public SlotClass()

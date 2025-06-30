@@ -15,7 +15,7 @@ public class PlayerBase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             //use this item
-            if (inventory.selectedItem != null)
+            if (inventory.selectedItem != null && inventory.inventoryUI.activeSelf == false)
             {
                 inventory.selectedItem.Use(this);
             }

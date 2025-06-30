@@ -32,7 +32,7 @@ public class InventoryManager : MonoBehaviour
     public ItemClass selectedItem;
 
     [SerializeField] private List<CraftingRecipeClass> craftingRecipes = new List<CraftingRecipeClass>();
-    public GameObject inventory;
+    public GameObject inventoryUI;
 
 
     private void Start()
@@ -70,7 +70,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (inventory.activeSelf == true)
+        if (inventoryUI.activeSelf == true)
         {
             if (Input.GetMouseButtonDown(0))// We Left Click
             {
@@ -99,7 +99,7 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
-        if (inventory.activeSelf == false)
+        if (inventoryUI.activeSelf == false)
         {
             if (isMovingItem == true)
             {
@@ -114,6 +114,7 @@ public class InventoryManager : MonoBehaviour
         {
             itemCursor.GetComponent<Image>().sprite = movingSlot.item.itemIcon;
         }
+
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0) //Scrolling up
         {
@@ -133,6 +134,10 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+    }
     #region Inventory Untils
     public void RefreshUI()
     {
@@ -150,6 +155,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     slots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
                 }
+                slots[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = items[i].item.itemName;
 
             }
             catch
@@ -157,6 +163,7 @@ public class InventoryManager : MonoBehaviour
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
                 slots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+                slots[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
             }
 
         }
@@ -455,7 +462,7 @@ public class InventoryManager : MonoBehaviour
         {
             return false;
         }
-        
+
         if (isMovingItem == false)
         {
             movingSlot.SubQuantity(1);
@@ -464,7 +471,7 @@ public class InventoryManager : MonoBehaviour
         {
             movingSlot.SubQuantityMoving(1);
         }
-        
+
         if (originalSlot.item != null && originalSlot.item == movingSlot.item)
         {
             originalSlot.AddQuantity(1);
