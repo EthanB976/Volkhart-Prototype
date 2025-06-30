@@ -16,17 +16,20 @@ MonoBehaviour:
   - <item>k__BackingField: {fileID: 11400000, guid: 3dc88e4d8307d184c99e7e9c36c2e57e, type: 2}
     <quantity>k__BackingField: 3
     inventory: {fileID: 0}
+  - <item>k__BackingField: {fileID: 11400000, guid: f4baea6e81fa02f4daa630d4ae6fe0c4, type: 2}
+    <quantity>k__BackingField: 2
+    inventory: {fileID: 0}
   outputItem:
     <item>k__BackingField: {fileID: 11400000, guid: c318b19d44c6cf04faaec21c80e59154, type: 2}
-    <quantity>k__BackingField: 0
+    <quantity>k__BackingField: 1
     inventory: {fileID: 0}
   inputItems1:
     <item>k__BackingField: {fileID: 11400000, guid: 3dc88e4d8307d184c99e7e9c36c2e57e, type: 2}
     <quantity>k__BackingField: 3
     inventory: {fileID: 0}
   inputItems2:
-    <item>k__BackingField: {fileID: 0}
-    <quantity>k__BackingField: 0
+    <item>k__BackingField: {fileID: 11400000, guid: f4baea6e81fa02f4daa630d4ae6fe0c4, type: 2}
+    <quantity>k__BackingField: 2
     inventory: {fileID: 0}
   inputItems3:
     <item>k__BackingField: {fileID: 0}

@@ -31,7 +31,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private int selectedSlotIndex = 0;
     public ItemClass selectedItem;
 
-    [SerializeField] private List<CraftingRecipeClass> craftingRecipes = new List<CraftingRecipeClass>();
+   // [SerializeField] private List<CraftingRecipeClass> craftingRecipes = new List<CraftingRecipeClass>();
     public GameObject inventoryUI;
 
 
@@ -128,10 +128,12 @@ public class InventoryManager : MonoBehaviour
         hotbarSelector.transform.position = hotbarSlots[selectedSlotIndex].transform.position;
         selectedItem = items[selectedSlotIndex + (hotbarSlots.Length * 3)].item;
 
+       /* Used for Testing
         if (Input.GetKeyDown(KeyCode.C)) //Handles Crafting atm
         {
             Craft(craftingRecipes[0]);
         }
+       */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
