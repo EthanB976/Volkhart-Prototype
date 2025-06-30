@@ -15,6 +15,8 @@ public class Attack : MonoBehaviour
 
     public GunData gunData;
 
+    public InventoryManager inventory;
+
 
     private void Start()
     {
@@ -24,6 +26,7 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
+       /* Used For Testing
         if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
             StartCoroutine(OnAttack());
@@ -33,9 +36,11 @@ public class Attack : MonoBehaviour
         {
             gunData.Shoot();
         }
+       */
+
     }
 
-    private IEnumerator OnAttack()
+    public IEnumerator OnAttack()
     {
         isAttacking = true;
 

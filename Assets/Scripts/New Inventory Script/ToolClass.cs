@@ -19,9 +19,9 @@ public class ToolClass : ItemClass
         //Uses the tool 
         base.Use(caller);
         if (toolType == ToolType.Weapon)
-        { 
-            Debug.Log("Swing Weapon");
-            //Insert Weapon logic here
+        {
+            Debug.Log("Sword Swung");
+            caller.StartCoroutine(caller.attack.OnAttack());
         }
         else if (toolType == ToolType.Pickaxe)
         {
@@ -31,7 +31,7 @@ public class ToolClass : ItemClass
         else if (toolType == ToolType.Gun)
         {
             Debug.Log("Shoot Gun");
-            //Inset Gun logic here
+            caller.gunData.Shoot();
         }
         
     }

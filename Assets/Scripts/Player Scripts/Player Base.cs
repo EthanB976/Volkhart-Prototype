@@ -17,6 +17,9 @@ public class PlayerBase : MonoBehaviour
 
     public InventoryManager inventory;
 
+    public Attack attack;
+    public GunData gunData;
+
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -26,7 +29,7 @@ public class PlayerBase : MonoBehaviour
     private void Update()
     {
         //For Testing Purposes will change later
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(0))
         {
             //use this item
             if (inventory.selectedItem != null && inventory.inventoryUI.activeSelf == false)
