@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using System.Collections;
+using UnityEngine.UI;
 
 public class AlienBase : MonoBehaviour
 {
-    [SerializeField] private float health = 10f;
+    [SerializeField] private float health;
+    [SerializeField] private float maxHealth;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float damage = 5f;
     [SerializeField] private Rigidbody2D rb;
@@ -25,6 +28,15 @@ public class AlienBase : MonoBehaviour
     [SerializeField] private bool hasTarget = false;
     [SerializeField] private bool stop = false;
     [SerializeField] private bool stunned = false;
+
+    [SerializeField] private Slider enemyHealthBar;
+
+    private void Start()
+    {
+        health = maxHealth;
+        enemyHealthBar.maxValue = maxHealth;
+        enemyHealthBar.value = health;
+    }
 
     private void Update()
     {
@@ -107,6 +119,7 @@ public class AlienBase : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        enemyHealthBar.value = health;
         Alien.SetTrigger("slimeDamaged");
         StartCoroutine(SlimeDamage(0.5f));
         if (health <= 0)
@@ -132,6 +145,8 @@ public class AlienBase : MonoBehaviour
         Alien.SetTrigger("slimeDeath");
         rb.linearVelocity = Vector3.zero;
         yield return new WaitForSeconds(0.5f);
+
+        enemyHealthBar.gameObject.SetActive(false);
 
         Destroy(gameObject);
     }

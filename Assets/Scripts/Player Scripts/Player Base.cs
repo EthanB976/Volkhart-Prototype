@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerBase : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] LefttoRightMovement lefttoRightMovement;
 
+    [SerializeField] private Slider playerHealthBar;
 
     public InventoryManager inventory;
 
@@ -24,6 +27,9 @@ public class PlayerBase : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         lefttoRightMovement = GetComponent<LefttoRightMovement>();
+        playerHealth = maxPlayerHealth;
+        playerHealthBar.maxValue = maxPlayerHealth;
+        playerHealthBar.value = playerHealth;
     }
 
     private void Update()
@@ -45,12 +51,13 @@ public class PlayerBase : MonoBehaviour
     public void TakeDamage(float damage)
     {
         playerHealth -= damage;
+        playerHealthBar.value = playerHealth;
         
         StartCoroutine(PlayerDamage(2f));
         if (playerHealth <= 0)
         {
-            
-            //StartCoroutine(PlayerDeath());
+
+            SceneManager.LoadScene(1);
         }
 
     }
@@ -60,8 +67,14 @@ public class PlayerBase : MonoBehaviour
         if (playerHealth >= maxPlayerHealth)
         {
             playerHealth = maxPlayerHealth;
+            playerHealthBar.value = playerHealth;
         }
        
+    }
+
+    private void UpdatePLayerHealth()
+    {
+        playerHealthBar.value = playerHealth;
     }
 
 

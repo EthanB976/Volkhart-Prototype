@@ -1,5 +1,104 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &771884122114238772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3546984782762482665}
+  - component: {fileID: 4038744860084942001}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3546984782762482665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771884122114238772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5146220385568815407}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &4038744860084942001
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771884122114238772}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4935298, y: -0.07248783}
+      - {x: 0.46012592, y: -0.0009775162}
+      - {x: 0.39713335, y: 0.05720234}
+      - {x: 0.3332181, y: 0.08804655}
+      - {x: 0.2438755, y: 0.12215543}
+      - {x: 0.13872337, y: 0.15854096}
+      - {x: -0.15989876, y: 0.16113949}
+      - {x: -0.33904552, y: 0.0888741}
+      - {x: -0.40193892, y: 0.057397842}
+      - {x: -0.46314812, y: -0.0080497265}
+      - {x: -0.4763794, y: -0.04268217}
+      - {x: -0.4932418, y: -0.066070795}
+      - {x: -0.52672195, y: -0.13049245}
+      - {x: -0.53056335, y: -0.33243632}
+      - {x: -0.4645157, y: -0.4311645}
+      - {x: -0.398314, y: -0.46600413}
+      - {x: 0.39754295, y: -0.4667759}
+      - {x: 0.4626484, y: -0.4289677}
+      - {x: 0.5259795, y: -0.33259892}
+      - {x: 0.52525806, y: -0.13035631}
+  m_UseDelaunayMesh: 0
 --- !u!1 &6860850998871057139
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,7 +133,8 @@ Transform:
   m_LocalPosition: {x: 5.34, y: -0.58, z: 0}
   m_LocalScale: {x: 1.8397, y: 1.8397, z: 1.8397}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3546984782762482665}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3130697768395966191
@@ -80,7 +180,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -9074539206338946419, guid: c80534141f80d28489b1ef92f8ff7d99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -221,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  maxHealth: 50
   speed: 3
   damage: 5
   rb: {fileID: 2255442103815903459}
@@ -237,6 +338,7 @@ MonoBehaviour:
   hasTarget: 0
   stop: 0
   stunned: 0
+  enemyHealthBar: {fileID: 0}
 --- !u!114 &1274664714319453836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,4 +353,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 5
   Rigidbody2D: {fileID: 0}
-  alienBase: {fileID: 0}
+  alienBase: {fileID: 6994004854885848250}
