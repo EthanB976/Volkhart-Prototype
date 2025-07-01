@@ -41,6 +41,8 @@ public class PlayerBase : MonoBehaviour
             if (inventory.selectedItem != null && inventory.inventoryUI.activeSelf == false)
             {
                 inventory.selectedItem.Use(this);
+
+                playerHealthBar.value = playerHealth;
             }
 
         }
