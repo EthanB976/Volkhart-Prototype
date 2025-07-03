@@ -118,12 +118,44 @@ public class InventoryManager : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0) //Scrolling up
         {
-            selectedSlotIndex = Mathf.Clamp(selectedSlotIndex + 1, 0, hotbarSlots.Length - 1);
+            selectedSlotIndex = Mathf.Clamp(selectedSlotIndex + 1, 0, 5);
+            
+            if (selectedSlotIndex > 4)
+            {
+                selectedSlotIndex = 0;
+            }
+            
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0) //Scrolling down
         {
-            selectedSlotIndex = Mathf.Clamp(selectedSlotIndex - 1, 0, hotbarSlots.Length - 1);
+            selectedSlotIndex = Mathf.Clamp(selectedSlotIndex - 1, -1, hotbarSlots.Length - 1);
+            if (selectedSlotIndex < 0)
+            {
+                selectedSlotIndex = 4;
+            }
         }
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            selectedSlotIndex = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            selectedSlotIndex = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            selectedSlotIndex = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            selectedSlotIndex = 3;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            selectedSlotIndex = 4;
+        }
+
 
         hotbarSelector.transform.position = hotbarSlots[selectedSlotIndex].transform.position;
         selectedItem = items[selectedSlotIndex + (hotbarSlots.Length * 3)].item;
