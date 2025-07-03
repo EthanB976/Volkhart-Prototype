@@ -14,10 +14,10 @@ public class AlienAttacks : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Attack player");
         //Enemy Takes Damage
-        if (other.tag == "Player")
+        if (other.tag == "Player")      
         {
+            Debug.Log("Attack player");
             other.GetComponent<PlayerBase>().TakeDamage(Damage);
             Debug.Log("Player Hit");
 
