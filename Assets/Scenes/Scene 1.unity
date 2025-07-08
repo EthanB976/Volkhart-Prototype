@@ -5496,6 +5496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStunned: 0
+  isDashing: 0
 --- !u!95 &760585874
 Animator:
   serializedVersion: 7
@@ -5562,10 +5563,17 @@ MonoBehaviour:
   moveSpeed: 5
   rb2d: {fileID: 760585869}
   animator: {fileID: 760585874}
+  movement: {x: 0, y: 0}
   Aim: {fileID: 909691298}
   Weapon: {fileID: 926074613}
   Gun: {fileID: 1432001058}
   isStunned: 0
+  dashSpeed: 1000
+  dashDuration: 0.2
+  dashCoolDown: 0.5
+  isDashing: 0
+  canDash: 1
+  ltrMovement: {fileID: 0}
 --- !u!212 &760585877
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36714,7 +36722,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 66
-      m_TileSpriteIndex: 58
+      m_TileSpriteIndex: 59
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -39394,7 +39402,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 70
-      m_TileSpriteIndex: 36
+      m_TileSpriteIndex: 58
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -40751,8 +40759,8 @@ Tilemap:
     m_Data: {fileID: -858165931, guid: ab727495e7c229049a0b2f99a914be7c, type: 3}
   - m_RefCount: 10
     m_Data: {fileID: 1194559723, guid: ab727495e7c229049a0b2f99a914be7c, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 962442241, guid: ab727495e7c229049a0b2f99a914be7c, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 135078941, guid: ab727495e7c229049a0b2f99a914be7c, type: 3}
   - m_RefCount: 15
@@ -40796,9 +40804,9 @@ Tilemap:
   - m_RefCount: 8
     m_Data: {fileID: 1755531791, guid: ab727495e7c229049a0b2f99a914be7c, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: 962442241, guid: ab727495e7c229049a0b2f99a914be7c, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: 1506704968, guid: ab727495e7c229049a0b2f99a914be7c, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: 713048072, guid: ab727495e7c229049a0b2f99a914be7c, type: 3}
   - m_RefCount: 1
