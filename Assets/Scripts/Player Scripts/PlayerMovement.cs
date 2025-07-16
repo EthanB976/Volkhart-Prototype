@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] LefttoRightMovement ltrMovement;
 
+    [SerializeField] LayerMask playerLayerMask;
+    [SerializeField] LayerMask enemyLayerMask;
+
     private void Start()
     {
         ltrMovement = GetComponent<LefttoRightMovement>();
@@ -38,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
       
-         if (Input.GetKeyDown(KeyCode.F) && canDash)
+         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
          {
              Dash();
          }
@@ -102,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        Physics2D.IgnoreLayerCollision(7, 8, true);
         ltrMovement.Dashing();
         Vector2 direction = movement.normalized;
         rb2d.AddForce(direction * dashSpeed);
@@ -113,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
         ltrMovement.NotDashing();
+        Physics2D.IgnoreLayerCollision(7, 8, false);
         StartCoroutine(DashCoolDown());
     }
 
