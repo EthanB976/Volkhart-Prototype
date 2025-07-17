@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Transform Aim;
     [SerializeField] private Transform Weapon;
-    [SerializeField] private Transform Gun;
 
     [SerializeField] private bool isStunned = false;
 
@@ -73,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
             float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
             Aim.rotation = Quaternion.Euler(0, 0, angle);
             Weapon.rotation = Quaternion.Euler(0, 0, angle);
-            Gun.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
 
