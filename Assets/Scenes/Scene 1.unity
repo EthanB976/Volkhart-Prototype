@@ -5574,9 +5574,8 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   Aim: {fileID: 909691298}
   Weapon: {fileID: 926074613}
-  Gun: {fileID: 0}
   isStunned: 0
-  dashSpeed: 1000
+  dashSpeed: 2000
   dashDuration: 0.2
   dashCoolDown: 0.5
   isDashing: 0
