@@ -13,6 +13,7 @@ public class GunData : MonoBehaviour
 
     public InventoryManager inventoryManager;
     public ScriptableObject scriptableObject;
+    [SerializeField] private GameObject GunSights;
 
     private void Start()
     {
@@ -30,6 +31,8 @@ public class GunData : MonoBehaviour
                 canShoot = true;
             }
         }
+
+        DisplaySightLines();
     }
 
     public void Shoot()
@@ -51,11 +54,15 @@ public class GunData : MonoBehaviour
         }
     }
 
-    public void DisplaySightLinesJames()
+    public void DisplaySightLines()
     {
         if (inventoryManager.selectedItem == scriptableObject)
         {
-            //Put Sightline function to turn off and on here - James
+            GunSights.SetActive(true);
+        }
+        else
+        {
+            GunSights.SetActive(false);
         }
     }
 
