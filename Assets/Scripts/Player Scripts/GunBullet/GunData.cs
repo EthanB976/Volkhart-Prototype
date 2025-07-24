@@ -1,3 +1,4 @@
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class GunData : MonoBehaviour
@@ -14,6 +15,8 @@ public class GunData : MonoBehaviour
     public InventoryManager inventoryManager;
     public ScriptableObject scriptableObject;
     [SerializeField] private GameObject GunSights;
+    public SlotClass[] ammoItem;
+    public ItemClass ammoAmount;
 
     private void Start()
     {
@@ -28,7 +31,10 @@ public class GunData : MonoBehaviour
             currentDelay -= Time.deltaTime;
             if (currentDelay <= 0)
             {
-                canShoot = true;
+                if (HasAmmo())
+                {
+                    canShoot = true;
+                }
             }
         }
 
@@ -37,7 +43,7 @@ public class GunData : MonoBehaviour
 
     public void Shoot()
     {
-        if (canShoot)
+        if (canShoot && HasAmmo())
         {
             canShoot = false;
             currentDelay = reloadDelay;
@@ -47,12 +53,35 @@ public class GunData : MonoBehaviour
             bullet.transform.rotation = transform.rotation;
 
             bulletData = bullet.GetComponent<BulletData>();
+
             if (bulletData != null)
             {
                 bulletData.Initialize();
             }
+
+
+            inventoryManager.RemoveItem(ammoAmount);
+        }
+        else
+        {
+            Debug.Log("No ammo");
         }
     }
+
+    public bool HasAmmo()
+    {
+        //Checks all items in inventory, If inventory doesn't contain required amount of items it doesn't allow the user to craft the item
+        for (int i = 0; i < ammoItem.Length; i++)
+        {
+            if (!inventoryManager.ContainsItem(ammoItem[i].item))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 
     public void DisplaySightLines()
     {

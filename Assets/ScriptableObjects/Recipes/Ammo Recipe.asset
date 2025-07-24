@@ -10,20 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 416d114ecacd4a244abc1ac505f9c1c0, type: 3}
-  m_Name: PotionRecipe
+  m_Name: Ammo Recipe
   m_EditorClassIdentifier: 
   inputItems:
-  - <item>k__BackingField: {fileID: 11400000, guid: a9c897e7deabb1c44a099bbe29d13b5b, type: 2}
+  - <item>k__BackingField: {fileID: 11400000, guid: 3dc88e4d8307d184c99e7e9c36c2e57e, type: 2}
     <quantity>k__BackingField: 2
+    inventory: {fileID: 0}
   outputItem:
-    <item>k__BackingField: {fileID: 11400000, guid: 2ad6f0a7e3f4c7c4abf93c1acba9922d, type: 2}
-    <quantity>k__BackingField: 1
+    <item>k__BackingField: {fileID: 11400000, guid: 25cd15f2b0c11ca4494343d5322b7776, type: 2}
+    <quantity>k__BackingField: 10
+    inventory: {fileID: 0}
   inputItems1:
-    <item>k__BackingField: {fileID: 11400000, guid: a9c897e7deabb1c44a099bbe29d13b5b, type: 2}
+    <item>k__BackingField: {fileID: 11400000, guid: 3dc88e4d8307d184c99e7e9c36c2e57e, type: 2}
     <quantity>k__BackingField: 2
+    inventory: {fileID: 0}
   inputItems2:
     <item>k__BackingField: {fileID: 0}
     <quantity>k__BackingField: 0
+    inventory: {fileID: 0}
   inputItems3:
     <item>k__BackingField: {fileID: 0}
     <quantity>k__BackingField: 0
+    inventory: {fileID: 0}

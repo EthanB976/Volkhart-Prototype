@@ -2067,6 +2067,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2088351425}
     m_Modifications:
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 880203916}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Craft
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 110cf511816fd29499fae941a58f5da3, type: 2}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: CraftingRecipeClass, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4678851349021063233, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2618,6 +2650,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2088351425}
     m_Modifications:
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 880203916}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Craft
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a35ec7f1801ecc49a40cfc937d6d3b4, type: 2}
+    - target: {fileID: 2956545972690066623, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: CraftingRecipeClass, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4678851349021063233, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6220,6 +6284,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3879f1ad4869b83419246a6b1ee1b64a, type: 2}
   - {fileID: 11400000, guid: 54c00798604e9b04ca92a2215b1d1386, type: 2}
   - {fileID: 11400000, guid: 110cf511816fd29499fae941a58f5da3, type: 2}
+  - {fileID: 11400000, guid: 9a35ec7f1801ecc49a40cfc937d6d3b4, type: 2}
   recipeCraftingSlots:
   - {fileID: 784540476}
   craftingSlotHolder: {fileID: 2088351424}
@@ -8007,6 +8072,9 @@ MonoBehaviour:
     inventory: {fileID: 0}
   - <item>k__BackingField: {fileID: 11400000, guid: c318b19d44c6cf04faaec21c80e59154, type: 2}
     <quantity>k__BackingField: 1
+    inventory: {fileID: 0}
+  - <item>k__BackingField: {fileID: 11400000, guid: 25cd15f2b0c11ca4494343d5322b7776, type: 2}
+    <quantity>k__BackingField: 10
     inventory: {fileID: 0}
   itemCursor: {fileID: 1359943762}
   hotbarSelector: {fileID: 607404784}
@@ -52541,6 +52609,11 @@ MonoBehaviour:
   inventoryManager: {fileID: 880203916}
   scriptableObject: {fileID: 11400000, guid: c318b19d44c6cf04faaec21c80e59154, type: 2}
   GunSights: {fileID: 2032554067}
+  ammoItem:
+  - <item>k__BackingField: {fileID: 11400000, guid: 25cd15f2b0c11ca4494343d5322b7776, type: 2}
+    <quantity>k__BackingField: 1
+    inventory: {fileID: 0}
+  ammoAmount: {fileID: 11400000, guid: 25cd15f2b0c11ca4494343d5322b7776, type: 2}
 --- !u!1001 &1936488653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53175,6 +53248,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1176883448}
     m_Modifications:
+    - target: {fileID: 2589554744555947710, guid: b7a6da94fd38be84ab387f534cf3626e, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1639624
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589554744555947710, guid: b7a6da94fd38be84ab387f534cf3626e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1591461
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589554744555947710, guid: b7a6da94fd38be84ab387f534cf3626e, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.004314661
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589554744555947710, guid: b7a6da94fd38be84ab387f534cf3626e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.005683571
+      objectReference: {fileID: 0}
     - target: {fileID: 6846633832442310558, guid: b7a6da94fd38be84ab387f534cf3626e, type: 3}
       propertyPath: m_Name
       value: Locked Door

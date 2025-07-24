@@ -31,7 +31,7 @@ public class DoorScript : MonoBehaviour
 
     public void UseKey(InventoryManager inventory)
     {
-        inventory.RemoveItem(item);
+        inventory.RemoveItemRecipe(item, 1);
 
         door.SetActive(false);
 
