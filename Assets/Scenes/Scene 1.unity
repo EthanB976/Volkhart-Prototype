@@ -6532,6 +6532,9 @@ MonoBehaviour:
   - <item>k__BackingField: {fileID: 11400000, guid: 557f2ae4a32128d41b9649cc452d553a, type: 2}
     <quantity>k__BackingField: 6
     inventory: {fileID: 0}
+  - <item>k__BackingField: {fileID: 11400000, guid: c318b19d44c6cf04faaec21c80e59154, type: 2}
+    <quantity>k__BackingField: 1
+    inventory: {fileID: 0}
   itemCursor: {fileID: 1359943762}
   hotbarSelector: {fileID: 607404784}
   selectedSlotIndex: 0
