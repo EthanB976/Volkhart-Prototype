@@ -11,6 +11,10 @@ public class GunData : MonoBehaviour
     [SerializeField] private ObjectPoolBullet bulletPool;
     [SerializeField] BulletData bulletData;
 
+    public InventoryManager inventoryManager;
+    public ScriptableObject scriptableObject;
+    [SerializeField] private GameObject GunSights;
+
     private void Start()
     {
         bulletPool.Initialize(bulletPrefab, bulletPoolCount);
@@ -27,6 +31,8 @@ public class GunData : MonoBehaviour
                 canShoot = true;
             }
         }
+
+        DisplaySightLines();
     }
 
     public void Shoot()
@@ -45,6 +51,18 @@ public class GunData : MonoBehaviour
             {
                 bulletData.Initialize();
             }
+        }
+    }
+
+    public void DisplaySightLines()
+    {
+        if (inventoryManager.selectedItem == scriptableObject)
+        {
+            GunSights.SetActive(true);
+        }
+        else
+        {
+            GunSights.SetActive(false);
         }
     }
 

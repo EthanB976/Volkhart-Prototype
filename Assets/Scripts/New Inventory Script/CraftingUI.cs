@@ -103,8 +103,8 @@ public class CraftingUI : MonoBehaviour
                 recipeCraftingSlots[i].transform.GetChild(2).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
                 //3rd Slot
                 recipeCraftingSlots[i].transform.GetChild(2).GetChild(2).GetChild(0).GetComponent<Image>().enabled = false;
-                recipeCraftingSlots[i].transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Image>().sprite = null;
-                recipeCraftingSlots[i].transform.GetChild(2).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+                recipeCraftingSlots[i].transform.GetChild(2).GetChild(2).GetChild(0).GetComponent<Image>().sprite = null;
+                recipeCraftingSlots[i].transform.GetChild(2).GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
             }
         }
     }

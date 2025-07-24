@@ -32,6 +32,7 @@ public class ToolClass : ItemClass
         {
             Debug.Log("Shoot Gun");
             caller.gunData.Shoot();
+            
         }
         
     }
