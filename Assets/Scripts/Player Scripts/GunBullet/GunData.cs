@@ -11,6 +11,9 @@ public class GunData : MonoBehaviour
     [SerializeField] private ObjectPoolBullet bulletPool;
     [SerializeField] BulletData bulletData;
 
+    public InventoryManager inventoryManager;
+    public ScriptableObject scriptableObject;
+
     private void Start()
     {
         bulletPool.Initialize(bulletPrefab, bulletPoolCount);
@@ -45,6 +48,14 @@ public class GunData : MonoBehaviour
             {
                 bulletData.Initialize();
             }
+        }
+    }
+
+    public void DisplaySightLinesJames()
+    {
+        if (inventoryManager.selectedItem == scriptableObject)
+        {
+            //Put Sightline function to turn off and on here - James
         }
     }
 

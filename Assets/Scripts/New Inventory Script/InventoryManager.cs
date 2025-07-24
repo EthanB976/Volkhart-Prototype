@@ -380,6 +380,17 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    public bool ContainsItem(ItemClass item)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i].item == item /*&& items[i].item.isStackable && */)
+                return true;
+        }
+
+        return false;
+    }
+
     public bool isFull()
     {
         for (int i = 0; i < items.Length; i++)
