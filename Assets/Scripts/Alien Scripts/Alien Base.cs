@@ -15,15 +15,7 @@ public class AlienBase : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     [SerializeField] private Animator Alien;
-
-   
-
-    [SerializeField] private float wanderRange = 10f;
-    [SerializeField] private float wanderTimer = 10f;
-    [SerializeField] private Vector2 wanderTarget;
-    [SerializeField] private bool isWaiting = false;
-    [SerializeField] private bool hasTarget = false;
-    [SerializeField] private bool stop = false;
+    
     public bool stunned = false;
 
     [SerializeField] private Slider enemyHealthBar;
@@ -33,56 +25,6 @@ public class AlienBase : MonoBehaviour
         health = maxHealth;
         enemyHealthBar.maxValue = maxHealth;
         enemyHealthBar.value = health;
-    }
-
-    private void Update()
-    {
-        if (stunned)
-        {
-            return;
-        }
-
-        Wander();
-
-    }
-
-
-    
-
-    public void Wander()
-    {
-        if (isWaiting || stop)
-        {
-            return;
-        }
-
-        if (!hasTarget)
-        {
-            Vector2 randomTarget = Random.insideUnitCircle * wanderRange;
-            wanderTarget = (Vector2)transform.position + randomTarget;
-            hasTarget = true;
-        }
-
-        Vector2 direction = (wanderTarget - (Vector2)transform.position).normalized;
-        rb.linearVelocity = direction * speed;
-
-        if (Vector2.Distance(transform.position, wanderTarget) < 0.5f && hasTarget)
-        {
-            hasTarget = false;
-            stop = true;
-            StartCoroutine(WanderStop());
-        }
-
-
-    }
-
-    public IEnumerator WanderStop()
-    {
-        isWaiting = true;
-        rb.linearVelocity = Vector2.zero;
-        yield return new WaitForSeconds(2);
-        isWaiting = false;
-        stop = false;
     }
 
     public void TakeDamage(float damage)
@@ -120,10 +62,6 @@ public class AlienBase : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere (transform.position, wanderRange);
-    }
+    
 
 }
