@@ -13,32 +13,14 @@ public class Attack : MonoBehaviour
     public float attackSpeed = 10f;
     public Vector2 originalLocalPos;
 
-    public GunData gunData;
-
     public InventoryManager inventory;
 
 
     private void Start()
     {
         originalLocalPos = melee.transform.localPosition; 
-        gunData = GetComponentInChildren<GunData>();
     }
 
-    private void Update()
-    {
-       /* Used For Testing
-        if (Input.GetMouseButtonDown(0) && !isAttacking)
-        {
-            StartCoroutine(OnAttack());
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            gunData.Shoot();
-        }
-       */
-
-    }
 
     public IEnumerator OnAttack()
     {
