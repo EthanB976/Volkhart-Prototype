@@ -13,6 +13,8 @@ public class MoveToPlayer : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed = 5f;
 
+    [SerializeField] public bool movingToPlayer = false;
+
     private void Start()
     {
         alienBase = GetComponent<AlienBase>();
@@ -41,10 +43,12 @@ public class MoveToPlayer : MonoBehaviour
         if (hitColliders != null)
         {
             playerTransform = hitColliders.transform;
+            movingToPlayer = true;
         }
         else
         {
             playerTransform = null;
+            movingToPlayer = false;
         }
     }
 

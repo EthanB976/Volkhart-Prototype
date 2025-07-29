@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 
-public class AlienWander : MonoBehaviour
+public class AlienWanderShoot : MonoBehaviour
 {
     [SerializeField] private float wanderRange = 10f;
     [SerializeField] private float wanderTimer = 10f;
@@ -16,7 +16,7 @@ public class AlienWander : MonoBehaviour
     [SerializeField] private float speed = 5f;
 
     [SerializeField] private AlienBase alienBase;
-    [SerializeField] private MoveToPlayer moveToPlayer;
+    [SerializeField] private ShootPlayer shootPlayer;
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class AlienWander : MonoBehaviour
             return;
         }
 
-        if (moveToPlayer.movingToPlayer)
+        if (shootPlayer.shootingPlayer)
         {
             return;
         }
