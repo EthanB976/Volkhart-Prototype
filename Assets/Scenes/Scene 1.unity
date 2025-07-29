@@ -6643,9 +6643,9 @@ GameObject:
   - component: {fileID: 760585868}
   - component: {fileID: 760585877}
   - component: {fileID: 760585869}
-  - component: {fileID: 760585876}
   - component: {fileID: 760585875}
   - component: {fileID: 760585874}
+  - component: {fileID: 760585876}
   - component: {fileID: 760585873}
   - component: {fileID: 760585872}
   - component: {fileID: 760585871}
@@ -6846,8 +6846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f463b8cdf6f0a45897c2397e4bfdde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStunned: 0
-  isDashing: 0
+  playerBase: {fileID: 760585871}
+  playerMovement: {fileID: 760585876}
 --- !u!95 &760585874
 Animator:
   serializedVersion: 7
@@ -6917,19 +6917,19 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   Aim: {fileID: 909691298}
   Weapon: {fileID: 926074613}
-  isStunned: 0
-  dashSpeed: 10
-  dashDuration: 1
-  dashCoolDown: 1
+  dashSpeed: 1000
+  dashDuration: 0.2
+  dashCoolDown: 0.5
   isDashing: 0
   canDash: 1
-  ltrMovement: {fileID: 0}
+  ltrMovement: {fileID: 760585873}
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 0
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  playerBase: {fileID: 760585871}
 --- !u!212 &760585877
 SpriteRenderer:
   m_ObjectHideFlags: 0

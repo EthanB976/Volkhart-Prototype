@@ -52,8 +52,6 @@ public class ShootPlayer : MonoBehaviour
                 MoveTowardsPlayer();
             }
 
-            
-
         }
 
     }
@@ -67,7 +65,6 @@ public class ShootPlayer : MonoBehaviour
             playerTransform = hitColliders.transform;
             shootingPlayer = true;
             alienAimGun.playerTransform = playerTransform;
-            Debug.Log("Player detected");
         }
         else
         {
@@ -80,21 +77,18 @@ public class ShootPlayer : MonoBehaviour
     private void Shoot()
     {
         alienGunData.Shoot();
-        Debug.Log("Shooting Player");
     }
 
     private void Retreat()
     {
         Vector2 direction = (transform.position - playerTransform.position).normalized;
         rb2D.linearVelocity = direction * speed;
-        Debug.Log("Running away");
     }
 
     private void MoveTowardsPlayer()
     {
         Vector2 direction = (playerTransform.position - transform.position).normalized;
         rb2D.linearVelocity = direction * speed;
-        Debug.Log("Moveing towards player");
     }
 
 

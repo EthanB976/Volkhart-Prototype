@@ -9,7 +9,7 @@ public class PlayerBase : MonoBehaviour
     public float maxPlayerHealth = 100f;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float damage = 5f;
-    [SerializeField] private bool stunned = false;
+    [SerializeField] public bool stunned = false;
 
     [SerializeField] private Rigidbody2D rb2d;
 
@@ -83,11 +83,7 @@ public class PlayerBase : MonoBehaviour
     private IEnumerator PlayerDamage(float duration)
     {
         stunned = true;
-        playerMovement.Stunned();
-        lefttoRightMovement.Stunned();
         yield return new WaitForSeconds(0.25f);
-        playerMovement.NotStunned();
-        lefttoRightMovement.NotStunned();
         stunned = false;
 
     }

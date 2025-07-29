@@ -15,12 +15,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform Aim;
     [SerializeField] private Transform Weapon;
 
-    [SerializeField] private bool isStunned = false;
-
     [SerializeField] private float dashSpeed = 10f;
     [SerializeField] private float dashDuration = 1f;
     [SerializeField] private float dashCoolDown = 1f;
-    [SerializeField] private bool isDashing = false;
+    [SerializeField] public bool isDashing = false;
     [SerializeField] private bool canDash = true;
 
     [SerializeField] LefttoRightMovement ltrMovement;
@@ -28,41 +26,41 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask playerLayerMask;
     [SerializeField] LayerMask enemyLayerMask;
 
+    [SerializeField] private PlayerBase playerBase;
+
     private void Start()
     {
         ltrMovement = GetComponent<LefttoRightMovement>();
+        playerBase = GetComponent<PlayerBase>();
     }
 
     private void Update()
     {
-        if (isDashing)
+        if (!isDashing)
         {
-            return;
+            if (!playerBase.stunned)
+            {
+                movement.x = Input.GetAxisRaw("Horizontal");
+                movement.y = Input.GetAxisRaw("Vertical");
+
+
+
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
+                animator.SetFloat("Speed", movement.sqrMagnitude);
+
+                RotateAim();
+            }
+            
         }
       
-         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
-         {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
              Dash();
-         }
+        }
 
-         if (!isStunned)
-         {
-             movement.x = Input.GetAxisRaw("Horizontal");
-             movement.y = Input.GetAxisRaw("Vertical");
-
-
-
-             animator.SetFloat("Horizontal", movement.x);
-             animator.SetFloat("Vertical", movement.y);
-             animator.SetFloat("Speed", movement.sqrMagnitude);
-
-             RotateAim();
-
-
-         }
         
-        
-        
+
     }
 
     private void RotateAim()
@@ -77,26 +75,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isDashing)
+        if (!isDashing)
         {
-            return;
+            if (!playerBase.stunned)
+            {
+                rb2d.MovePosition(rb2d.position + movement * moveSpeed * Time.fixedDeltaTime);
+            }
+           
         }
 
-        if (!isStunned)
-        {
-            rb2d.MovePosition(rb2d.position + movement * moveSpeed * Time.fixedDeltaTime);
-        }
         
-    }
 
-    public void Stunned()
-    {
-        isStunned = true;
-    }
-
-    public void NotStunned()
-    {
-        isStunned = false;
     }
 
     public void Dash()
@@ -104,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         Physics2D.IgnoreLayerCollision(7, 8, true);
-        ltrMovement.Dashing();
         Vector2 direction = movement.normalized;
         rb2d.AddForce(direction * dashSpeed);
         StartCoroutine(DashDuration());
@@ -113,9 +101,8 @@ public class PlayerMovement : MonoBehaviour
     public IEnumerator DashDuration()
     {
         yield return new WaitForSeconds(dashDuration);
-        isDashing = false;
-        ltrMovement.NotDashing();
         Physics2D.IgnoreLayerCollision(7, 8, false);
+        isDashing = false;
         StartCoroutine(DashCoolDown());
     }
 

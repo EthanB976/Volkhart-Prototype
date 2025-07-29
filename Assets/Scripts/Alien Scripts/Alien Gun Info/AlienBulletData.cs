@@ -39,12 +39,10 @@ public class AlienBulletData : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Bullet Hit");
 
         if (other.tag == "Player")
         {
             other.GetComponent<PlayerBase>().TakeDamage(bulletDamage);
-            Debug.Log("Player Hit");
 
             Rigidbody2D enemyrigidbody = other.GetComponent<Rigidbody2D>();
 
