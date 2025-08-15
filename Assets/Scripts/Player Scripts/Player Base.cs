@@ -24,6 +24,8 @@ public class PlayerBase : MonoBehaviour
     public Attack attack;
     public GunData gunData;
 
+    [SerializeField] private Quaternion originalRotation;
+
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -55,6 +57,8 @@ public class PlayerBase : MonoBehaviour
     {
         playerHealth -= damage;
         playerHealthBar.value = playerHealth;
+
+        originalRotation = transform.rotation;
         
         StartCoroutine(PlayerDamage(2f));
         if (playerHealth <= 0)
@@ -85,6 +89,7 @@ public class PlayerBase : MonoBehaviour
     {
         stunned = true;
         yield return new WaitForSeconds(0.25f);
+        transform.rotation = originalRotation;
         stunned = false;
 
     }

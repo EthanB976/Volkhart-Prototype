@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private PlayerBase playerBase;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     private void Start()
     {
         ltrMovement = GetComponent<LefttoRightMovement>();
@@ -57,6 +60,29 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
              Dash();
+        }
+
+        if (!isDashing && !playerBase.stunned)
+        {
+            if (movement.sqrMagnitude > soundThreshold)
+            {
+                if (!soundManager.footSteps.isPlaying)
+                {
+                    soundManager.FootSteps();
+
+                    Debug.Log("Walking sounds");
+                }
+                
+            }
+            else
+            {
+                if (soundManager.footSteps.isPlaying)
+                {
+                    soundManager.FootStepss();
+                    Debug.Log("Stopped walking");
+                }
+                    
+            }
         }
 
         
