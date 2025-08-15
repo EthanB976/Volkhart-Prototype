@@ -2191,7 +2191,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 3292750dcc636b7418d25755114ea799, type: 3}
   m_Resource: {fileID: 8300000, guid: 3292750dcc636b7418d25755114ea799, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.232
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2317,10 +2317,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 082e1dc5a5bbe1c46a2033f01701c580, type: 3}
-  m_Resource: {fileID: 8300000, guid: 082e1dc5a5bbe1c46a2033f01701c580, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 41b901989324dd44bb3a4356f9f763c6, type: 3}
+  m_Resource: {fileID: 8300000, guid: 41b901989324dd44bb3a4356f9f763c6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.722
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -16261,10 +16261,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 99849b496f68c334f98a6e8f27e5fd66, type: 3}
+  m_Resource: {fileID: 8300000, guid: 99849b496f68c334f98a6e8f27e5fd66, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.373
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -17024,6 +17024,8 @@ MonoBehaviour:
   attack: {fileID: 760585872}
   gunData: {fileID: 1932305867}
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  soundManager: {fileID: 1178055394}
+  soundThreshold: 0.1
 --- !u!114 &760585872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17045,6 +17047,8 @@ MonoBehaviour:
   attackSpeed: 10
   originalLocalPos: {x: 0, y: 0}
   inventory: {fileID: 880203916}
+  soundManager: {fileID: 1178055394}
+  soundThreshold: 0.1
 --- !u!114 &760585873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18037,6 +18041,8 @@ MonoBehaviour:
   selectedSlotIndex: 0
   selectedItem: {fileID: 0}
   inventoryUI: {fileID: 782992933}
+  soundManager: {fileID: 1178055394}
+  soundThreshold: 0.1
 --- !u!4 &880203917
 Transform:
   m_ObjectHideFlags: 0
@@ -18555,9 +18561,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36eb1e2bbe52ef5479ed82af32abd46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 50
   melee: {fileID: 926074612}
   Rigidbody2D: {fileID: 760585869}
+  soundManager: {fileID: 1178055394}
+  soundThreshold: 0.1
 --- !u!1001 &946475879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19162,10 +19170,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bfa46a9f20db32c41a0b915b0195ddab, type: 3}
-  m_Resource: {fileID: 8300000, guid: bfa46a9f20db32c41a0b915b0195ddab, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ce4744e9211604449af30c940ea71e18, type: 3}
+  m_Resource: {fileID: 8300000, guid: ce4744e9211604449af30c940ea71e18, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.475
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20035,10 +20043,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d892250cce1eb6043b8a395d3ab098eb, type: 3}
-  m_Resource: {fileID: 8300000, guid: d892250cce1eb6043b8a395d3ab098eb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 17e801adb8fa684468574c89996b957a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 17e801adb8fa684468574c89996b957a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.356
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20234,7 +20242,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 70cc15ecf9584f547899395475cd530a, type: 3}
   m_Resource: {fileID: 8300000, guid: 70cc15ecf9584f547899395475cd530a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.655
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20375,11 +20383,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 17b8c96eb0d2f0d4a981c070be9336ec, type: 3}
-  m_Resource: {fileID: 8300000, guid: 17b8c96eb0d2f0d4a981c070be9336ec, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d4d3946a598cf974480adb10b15b0047, type: 3}
+  m_Resource: {fileID: 8300000, guid: d4d3946a598cf974480adb10b15b0047, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.056
+  m_Pitch: 1.5
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -20799,8 +20807,8 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 6ef61f1053692294ebf16b328dff30a7, type: 3}
   m_Resource: {fileID: 8300000, guid: 6ef61f1053692294ebf16b328dff30a7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.352
+  m_Pitch: 1.31
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -96925,6 +96933,8 @@ MonoBehaviour:
     <quantity>k__BackingField: 1
     inventory: {fileID: 0}
   ammoAmount: {fileID: 11400000, guid: 25cd15f2b0c11ca4494343d5322b7776, type: 2}
+  soundManager: {fileID: 1178055394}
+  soundThreshold: 0.1
 --- !u!1001 &1936488653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98294,6 +98304,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5613019441819965549, guid: 88125bd684f51b64e962874d93fd13b9, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 6473766879466559110, guid: 88125bd684f51b64e962874d93fd13b9, type: 3}
       propertyPath: Rigidbody2D
       value: 
@@ -98476,10 +98490,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5788356533800240632, guid: 026c163f500da3b4a95f8cead16bba2d, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 6175260655709018702, guid: 026c163f500da3b4a95f8cead16bba2d, type: 3}
       propertyPath: m_Name
       value: Ranged Alien
       objectReference: {fileID: 0}
+    - target: {fileID: 7278419270412320146, guid: 026c163f500da3b4a95f8cead16bba2d, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -98533,6 +98555,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5573870190829110945, guid: 3e9a0c266e8b41143a96ee88796fd2c2, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 5954974494383104122, guid: 3e9a0c266e8b41143a96ee88796fd2c2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

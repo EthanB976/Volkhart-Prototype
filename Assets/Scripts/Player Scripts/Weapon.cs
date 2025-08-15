@@ -6,6 +6,9 @@ public class Weapon : MonoBehaviour
     public GameObject melee;
     public Rigidbody2D Rigidbody2D;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     private void Awake()
     {
         melee.SetActive(false);
@@ -20,6 +23,8 @@ public class Weapon : MonoBehaviour
             Debug.Log("Enemy Hit");
 
             Rigidbody2D enemyrigidbody = other.GetComponent<Rigidbody2D>();
+
+            soundManager.SwordDamage();
 
             if (enemyrigidbody != null)
             {

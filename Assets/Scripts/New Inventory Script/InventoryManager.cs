@@ -34,6 +34,8 @@ public class InventoryManager : MonoBehaviour
    // [SerializeField] private List<CraftingRecipeClass> craftingRecipes = new List<CraftingRecipeClass>();
     public GameObject inventoryUI;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Start()
     {
@@ -564,7 +566,10 @@ public class InventoryManager : MonoBehaviour
     public void Craft(CraftingRecipeClass recipe)
     {
         if (recipe.CanCraft(this))
+        {
             recipe.Craft(this);
+            soundManager.CraftingSound();
+        } 
         else
         {
             Debug.Log("Cannout Craft Item");

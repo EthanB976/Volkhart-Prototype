@@ -18,6 +18,9 @@ public class GunData : MonoBehaviour
     public SlotClass[] ammoItem;
     public ItemClass ammoAmount;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     private void Start()
     {
         bulletPool.Initialize(bulletPrefab, bulletPoolCount);
@@ -47,6 +50,8 @@ public class GunData : MonoBehaviour
         {
             canShoot = false;
             currentDelay = reloadDelay;
+
+            soundManager.Gun();
 
             GameObject bullet = bulletPool.CreateObject();
             bullet.transform.position = transform.position;

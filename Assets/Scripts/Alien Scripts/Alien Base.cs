@@ -20,6 +20,9 @@ public class AlienBase : MonoBehaviour
 
     [SerializeField] private Slider enemyHealthBar;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     private void Start()
     {
         health = maxHealth;
@@ -31,6 +34,7 @@ public class AlienBase : MonoBehaviour
     {
         health -= damage;
         enemyHealthBar.value = health;
+        soundManager.DamageAlien();
         Alien.SetTrigger("slimeDamaged");
         StartCoroutine(SlimeDamage(0.5f));
         if (health <= 0)

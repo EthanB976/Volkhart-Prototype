@@ -15,6 +15,9 @@ public class Attack : MonoBehaviour
 
     public InventoryManager inventory;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
 
     private void Start()
     {
@@ -25,6 +28,8 @@ public class Attack : MonoBehaviour
     public IEnumerator OnAttack()
     {
         isAttacking = true;
+
+        soundManager.SwordSwing();
 
         melee.SetActive(true);
         meleeAttack.SetTrigger("Attack");

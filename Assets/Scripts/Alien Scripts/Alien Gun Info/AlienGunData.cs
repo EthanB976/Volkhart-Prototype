@@ -9,6 +9,8 @@ public class AlienGunData : MonoBehaviour
     [SerializeField] private int bulletPoolCount = 10;
     [SerializeField] private ObjectPoolBullet bulletPool;
     [SerializeField] AlienBulletData bulletData;
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Start()
     {
@@ -34,6 +36,7 @@ public class AlienGunData : MonoBehaviour
         {
             canShoot = false;
             currentDelay = reloadDelay;
+            soundManager.AlienGun();
 
             GameObject bullet = bulletPool.CreateObject();
             bullet.transform.position = transform.position;

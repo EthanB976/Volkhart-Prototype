@@ -26,6 +26,9 @@ public class PlayerBase : MonoBehaviour
 
     [SerializeField] private Quaternion originalRotation;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -57,6 +60,8 @@ public class PlayerBase : MonoBehaviour
     {
         playerHealth -= damage;
         playerHealthBar.value = playerHealth;
+
+        soundManager.DamagePlayer();
 
         originalRotation = transform.rotation;
         
