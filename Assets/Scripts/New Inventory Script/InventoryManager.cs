@@ -1,8 +1,9 @@
-using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 
 public class InventoryManager : MonoBehaviour
@@ -116,7 +117,7 @@ public class InventoryManager : MonoBehaviour
         }
 
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0) //Scrolling up
+        if (inventoryUI.activeSelf == false && Input.GetAxis("Mouse ScrollWheel") > 0) //Scrolling up
         {
             selectedSlotIndex = Mathf.Clamp(selectedSlotIndex + 1, 0, 5);
             
@@ -126,7 +127,7 @@ public class InventoryManager : MonoBehaviour
             }
             
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0) //Scrolling down
+        else if (inventoryUI.activeSelf == false && Input.GetAxis("Mouse ScrollWheel") < 0) //Scrolling down
         {
             selectedSlotIndex = Mathf.Clamp(selectedSlotIndex - 1, -1, hotbarSlots.Length - 1);
             if (selectedSlotIndex < 0)

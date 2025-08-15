@@ -12,20 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416d114ecacd4a244abc1ac505f9c1c0, type: 3}
   m_Name: Ship Repair Component
   m_EditorClassIdentifier: 
-  inputItems: []
+  inputItems:
+  - <item>k__BackingField: {fileID: 11400000, guid: 7a969df149553f641ba8cd3a64d4ecd4, type: 2}
+    <quantity>k__BackingField: 1
+    inventory: {fileID: 0}
+  - <item>k__BackingField: {fileID: 11400000, guid: 4b70812eed6bfdc41a7158b358dda9f6, type: 2}
+    <quantity>k__BackingField: 1
+    inventory: {fileID: 0}
+  - <item>k__BackingField: {fileID: 11400000, guid: ccd173b4585e53b4bb1c5496612fea29, type: 2}
+    <quantity>k__BackingField: 1
+    inventory: {fileID: 0}
   outputItem:
-    <item>k__BackingField: {fileID: 0}
-    <quantity>k__BackingField: 0
+    <item>k__BackingField: {fileID: 11400000, guid: 85f8ebc1ca3b63243ab72635aaf394f3, type: 2}
+    <quantity>k__BackingField: 1
     inventory: {fileID: 0}
   inputItems1:
-    <item>k__BackingField: {fileID: 0}
-    <quantity>k__BackingField: 0
+    <item>k__BackingField: {fileID: 11400000, guid: 7a969df149553f641ba8cd3a64d4ecd4, type: 2}
+    <quantity>k__BackingField: 1
     inventory: {fileID: 0}
   inputItems2:
-    <item>k__BackingField: {fileID: 0}
-    <quantity>k__BackingField: 0
+    <item>k__BackingField: {fileID: 11400000, guid: 4b70812eed6bfdc41a7158b358dda9f6, type: 2}
+    <quantity>k__BackingField: 1
     inventory: {fileID: 0}
   inputItems3:
-    <item>k__BackingField: {fileID: 0}
-    <quantity>k__BackingField: 0
+    <item>k__BackingField: {fileID: 11400000, guid: ccd173b4585e53b4bb1c5496612fea29, type: 2}
+    <quantity>k__BackingField: 1
     inventory: {fileID: 0}
