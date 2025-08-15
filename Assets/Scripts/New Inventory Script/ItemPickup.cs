@@ -15,12 +15,15 @@ public class ItemPickup : MonoBehaviour
 
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(DisplayInfo());
-        inventoryManager.AddItem(item, amount);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.GetComponent<Collider2D>().enabled = false;
+        if (other.tag == "Player")
+        {
+            StartCoroutine(DisplayInfo());
+            inventoryManager.AddItem(item, amount);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+        }
     }
 
     IEnumerator DisplayInfo()

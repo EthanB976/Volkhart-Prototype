@@ -6,12 +6,22 @@ public class OpenUI : MonoBehaviour
     public GameObject hotbarPanel;
     public GameObject craftingPanel;
     public GameObject cursor;
+    public TypeWriteEffect typeWriteEffect;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+     
+        if (Input.GetKeyDown(KeyCode.Tab) && typeWriteEffect.dialogueUI.activeSelf == false)
         {
             ToggleInventory();
+        }
+
+        if(typeWriteEffect.dialogueUI.activeSelf == true)
+        {
+            inventoryPanel.SetActive(false);
+            hotbarPanel.SetActive(true);
+            cursor.SetActive(false);
+            craftingPanel.SetActive(false);
         }
     }
 
