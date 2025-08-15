@@ -19,6 +19,7 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private Slider playerHealthBar;
 
     public InventoryManager inventory;
+    public TypeWriteEffect typeWriteEffect;
 
     public Attack attack;
     public GunData gunData;
@@ -38,7 +39,7 @@ public class PlayerBase : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //use this item
-            if (inventory.selectedItem != null && inventory.inventoryUI.activeSelf == false)
+            if (inventory.selectedItem != null && inventory.inventoryUI.activeSelf == false && typeWriteEffect.dialogueUI.activeSelf == false )
             {
                 inventory.selectedItem.Use(this);
 
