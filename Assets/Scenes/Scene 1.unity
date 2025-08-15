@@ -98418,6 +98418,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8371154262865074131, guid: b7a6da94fd38be84ab387f534cf3626e, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
+    - target: {fileID: 8371154262865074131, guid: b7a6da94fd38be84ab387f534cf3626e, type: 3}
       propertyPath: inventoryManager
       value: 
       objectReference: {fileID: 880203916}
