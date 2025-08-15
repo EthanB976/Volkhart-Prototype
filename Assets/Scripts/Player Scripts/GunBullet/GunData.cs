@@ -54,7 +54,8 @@ public class GunData : MonoBehaviour
             soundManager.Gun();
 
             GameObject bullet = bulletPool.CreateObject();
-            bullet.transform.position = transform.position;
+            float spawnOffSet = 0.2f;
+            bullet.transform.position = transform.position + transform.forward * spawnOffSet;
             bullet.transform.rotation = transform.rotation;
 
             bulletData = bullet.GetComponent<BulletData>();

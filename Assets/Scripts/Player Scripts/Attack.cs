@@ -18,38 +18,27 @@ public class Attack : MonoBehaviour
     [SerializeField] private SoundManager soundManager;
     [SerializeField] private float soundThreshold = 0.1f;
 
-
     private void Start()
     {
-        originalLocalPos = melee.transform.localPosition; 
+        melee.SetActive(false);
     }
-
 
     public IEnumerator OnAttack()
     {
+        if (isAttacking)
+        {
+            yield break;
+        }
+
         isAttacking = true;
 
         soundManager.SwordSwing();
 
         melee.SetActive(true);
-        meleeAttack.SetTrigger("Attack");
-
-        Vector2 attackDir = Vector2.down;
-        Vector2 targetLocalPos = originalLocalPos + attackDir * attackDistance;
-
-
-        float t = 0f;
-        while (t < 1f)
-        {
-            t += Time.deltaTime * attackSpeed;
-            melee.transform.localPosition = Vector2.Lerp(originalLocalPos, targetLocalPos, t);
-            yield return null;
-        }
-
-       
+        meleeAttack.Play("SwordSwing");
+        Debug.Log("PlayAnimation");
 
         yield return new WaitForSeconds(atkDuration);
-        melee.transform.localPosition = originalLocalPos;
         melee.SetActive(false);
 
         isAttacking = false;

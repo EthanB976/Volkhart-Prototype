@@ -4,11 +4,17 @@ public class RotateGun : MonoBehaviour
 {
     public float turretRotationSpeed = 150;
     public Camera mainCamera;
+    public Attack attack;
 
     public void Update()
     {
-        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        HandleGun(mousePosition);
+        if (!attack.isAttacking)
+        {
+            Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            HandleGun(mousePosition);
+        }
+
+        
     }
 
     public void HandleGun(Vector2 pointerPosition)
