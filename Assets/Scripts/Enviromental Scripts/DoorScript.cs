@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Progress;
+using UnityEngine.UI;
+using System.Collections;
 
 public class DoorScript : MonoBehaviour
 {
@@ -8,24 +9,30 @@ public class DoorScript : MonoBehaviour
     public SlotClass[] keyItem;
     public InventoryManager inventoryManager;
     public GameObject door;
-  
+    private bool inDoorArea;
 
 
-    public void OnTriggerStay2D(Collider2D other)
+    private void Update()
+    {
+        if (inDoorArea == true)
+        {
+            OpenDoor();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (CanUseKey())
-                {
-                    UseKey(inventoryManager);
-                }
-                else
-                {
-                    Debug.Log("Do not have the Key");
-                }
-            }
+           inDoorArea = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            inDoorArea = false;
         }
     }
 
@@ -36,6 +43,21 @@ public class DoorScript : MonoBehaviour
         door.SetActive(false);
 
 
+    }
+
+    private void OpenDoor()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (CanUseKey())
+            {
+                UseKey(inventoryManager);
+            }
+            else
+            {
+                Debug.Log("Do not have the Key");
+            }
+        }
     }
 
     public bool CanUseKey()

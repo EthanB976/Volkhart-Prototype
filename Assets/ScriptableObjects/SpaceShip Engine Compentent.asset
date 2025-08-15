@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 'Ship Repair Component '
   ItemID: 10
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 71221310b97d85c438881363222167e6, type: 3}
   isStackable: 0
   stackSize: 99
