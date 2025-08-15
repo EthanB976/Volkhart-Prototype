@@ -17057,9 +17057,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   melee: {fileID: 926074612}
-  meleeAttack: {fileID: 926074617}
+  meleeAttack: {fileID: 1200204883}
   isAttacking: 0
-  atkDuration: 1
+  atkDuration: 0.5
   resetDelay: 0.1
   attackDistance: 2
   attackSpeed: 10
@@ -18699,7 +18699,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909691297}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fc4c16d57713604b91e562c8e351936, type: 3}
   m_Name: 
@@ -20011,6 +20011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1200204881}
   - component: {fileID: 1200204882}
+  - component: {fileID: 1200204883}
   m_Layer: 0
   m_Name: animation
   m_TagString: Untagged
@@ -20088,6 +20089,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1200204883
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200204880}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b25399cf0dfce14499db5d6052114416, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1221624124
 PrefabInstance:
   m_ObjectHideFlags: 0

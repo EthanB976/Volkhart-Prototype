@@ -35,7 +35,11 @@ public class Attack : MonoBehaviour
         soundManager.SwordSwing();
 
         melee.SetActive(true);
-        meleeAttack.Play("SwordSwing");
+
+        yield return null;
+
+
+        meleeAttack.SetTrigger("Attack");
         Debug.Log("PlayAnimation");
 
         yield return new WaitForSeconds(atkDuration);
