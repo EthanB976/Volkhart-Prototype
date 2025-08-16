@@ -8,8 +8,6 @@ using UnityEngine.UI;
 public class KeyTasks : MonoBehaviour
 {
     public InventoryManager inventoryManager;
-    private bool hasGun;
-    private bool hasShipPart;
     public bool hasTurnedOffDefences;
     private bool readyToEscape;
     private bool inEscapeArea;
