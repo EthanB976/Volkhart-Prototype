@@ -119,7 +119,7 @@ public class InventoryManager : MonoBehaviour
         }
 
 
-        if (inventoryUI.activeSelf == false && Input.GetAxis("Mouse ScrollWheel") > 0) //Scrolling up
+        if (inventoryUI.activeSelf == false && Input.GetAxis("Mouse ScrollWheel") < 0) //Scrolling down
         {
             selectedSlotIndex = Mathf.Clamp(selectedSlotIndex + 1, 0, 5);
             
@@ -129,7 +129,7 @@ public class InventoryManager : MonoBehaviour
             }
             
         }
-        else if (inventoryUI.activeSelf == false && Input.GetAxis("Mouse ScrollWheel") < 0) //Scrolling down
+        else if (inventoryUI.activeSelf == false && Input.GetAxis("Mouse ScrollWheel") > 0) //Scrolling up
         {
             selectedSlotIndex = Mathf.Clamp(selectedSlotIndex - 1, -1, hotbarSlots.Length - 1);
             if (selectedSlotIndex < 0)
