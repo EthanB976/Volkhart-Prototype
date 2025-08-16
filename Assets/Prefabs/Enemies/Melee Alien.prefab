@@ -598,7 +598,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -572612290, guid: c662f43ec4c6f824b9780c4e86ef35ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -710,6 +710,8 @@ MonoBehaviour:
   Alien: {fileID: 6979888707339352341}
   stunned: 0
   enemyHealthBar: {fileID: 682378890367885622}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!111 &5875653754457282045
 Animation:
   m_ObjectHideFlags: 0

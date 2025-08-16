@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7911751128505411595
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195447232163969407, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170043044076489529, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170043044076489529, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068450967204392166, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_Name
+      value: Grenader Alien Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7607398149320189361, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+    - {fileID: 2510408797537246727, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 4835148159824983180, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9166104880549641641, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 7343839882869687152}
+    - targetCorrespondingSourceObject: {fileID: 9166104880549641641, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 58190720191860081}
+  m_SourcePrefab: {fileID: 100100000, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+--- !u!1 &1367023255889565090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9166104880549641641, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+  m_PrefabInstance: {fileID: 7911751128505411595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7343839882869687152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367023255889565090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa259470844058c43af0b69249b33058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRange: 10
+  wanderTimer: 10
+  wanderTarget: {x: 0, y: 0}
+  isWaiting: 0
+  hasTarget: 0
+  stop: 0
+  rb: {fileID: 9005919101828153498}
+  speed: 5
+  alienBase: {fileID: 2851418920838333929}
+  alienGrenader: {fileID: 58190720191860081}
+--- !u!114 &58190720191860081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367023255889565090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5564768d4e52ebf409f61083f93efd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alienBase: {fileID: 2851418920838333929}
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  targetDetection: 10
+  playerTransform: {fileID: 0}
+  throwingRange: 8
+  retreatRange: 3
+  rb2D: {fileID: 9005919101828153498}
+  speed: 5
+  grenadeObject: {fileID: 3857505815176092007, guid: 5bf3020c4d460524a830affd9bd5e383, type: 3}
+  throwPoint: {fileID: 8404183546608061613}
+  throwForce: 10
+  coolDown: 2
+  throwTimer: 0
+  attackingPlayer: 0
+  isThrowing: 0
+--- !u!114 &2851418920838333929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+  m_PrefabInstance: {fileID: 7911751128505411595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367023255889565090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60606c7b31c1dc45a8bd3b3646a0b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8404183546608061613 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1832269964373779622, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+  m_PrefabInstance: {fileID: 7911751128505411595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &9005919101828153498 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1240561439736014993, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+  m_PrefabInstance: {fileID: 7911751128505411595}
+  m_PrefabAsset: {fileID: 0}
