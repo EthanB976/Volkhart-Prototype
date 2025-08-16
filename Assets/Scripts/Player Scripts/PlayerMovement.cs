@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SoundManager soundManager;
     [SerializeField] private float soundThreshold = 0.1f;
 
+
     private void Start()
     {
         ltrMovement = GetComponent<LefttoRightMovement>();
@@ -106,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         Physics2D.IgnoreLayerCollision(7, 8, true);
+        Physics2D.IgnoreLayerCollision(7, 9, true);
         Vector2 direction = movement.normalized;
         rb2d.AddForce(direction * dashSpeed);
         StartCoroutine(DashDuration());
@@ -115,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(dashDuration);
         Physics2D.IgnoreLayerCollision(7, 8, false);
+        Physics2D.IgnoreLayerCollision(7, 9, false);
         isDashing = false;
         StartCoroutine(DashCoolDown());
     }
