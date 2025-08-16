@@ -17,4 +17,4 @@ MonoBehaviour:
   itemIcon: {fileID: -1785411253, guid: d781db02b04ec6c428228ea765285c8e, type: 3}
   isStackable: 1
   stackSize: 99
-  healthAddedAmount: 10
+  healthAddedAmount: 40

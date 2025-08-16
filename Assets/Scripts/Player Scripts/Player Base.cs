@@ -1,7 +1,11 @@
+using NUnit.Framework.Interfaces;
 using System.Collections;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class PlayerBase : MonoBehaviour
 {
@@ -17,6 +21,7 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] LefttoRightMovement lefttoRightMovement;
 
     [SerializeField] private Slider playerHealthBar;
+    [SerializeField] private Slider potentialPlayerHealthBar;
 
     public InventoryManager inventory;
     public TypeWriteEffect typeWriteEffect;
@@ -28,6 +33,12 @@ public class PlayerBase : MonoBehaviour
 
     [SerializeField] private SoundManager soundManager;
     [SerializeField] private float soundThreshold = 0.1f;
+    [SerializeField] private ItemClass potion;
+    [SerializeField] private ItemClass bigPotion;
+    [SerializeField] private GameObject potentialPlayerHealthBarHolder;
+
+
+
 
     private void Start()
     {
@@ -44,14 +55,17 @@ public class PlayerBase : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //use this item
-            if (inventory.selectedItem != null && inventory.inventoryUI.activeSelf == false && typeWriteEffect.dialogueUI.activeSelf == false )
+            if (inventory.selectedItem != null && inventory.inventoryUI.activeSelf == false && typeWriteEffect.dialogueUI.activeSelf == false)
             {
                 inventory.selectedItem.Use(this);
 
                 playerHealthBar.value = playerHealth;
+                potentialPlayerHealthBarHolder.SetActive(false);
             }
 
         }
+
+        CheckingForPotion();
 
         PlayerHealthManager();
     }
@@ -64,7 +78,7 @@ public class PlayerBase : MonoBehaviour
         soundManager.DamagePlayer();
 
         originalRotation = transform.rotation;
-        
+
         StartCoroutine(PlayerDamage(2f));
         if (playerHealth <= 0)
         {
@@ -81,12 +95,7 @@ public class PlayerBase : MonoBehaviour
             playerHealth = maxPlayerHealth;
             playerHealthBar.value = playerHealth;
         }
-       
-    }
 
-    private void UpdatePLayerHealth()
-    {
-        playerHealthBar.value = playerHealth;
     }
 
 
@@ -98,4 +107,25 @@ public class PlayerBase : MonoBehaviour
         stunned = false;
 
     }
+
+    private void CheckingForPotion()
+    {
+        if (inventory.selectedItem == potion)
+        {
+            potentialPlayerHealthBarHolder.SetActive(true);
+            potentialPlayerHealthBar.value = playerHealth + 20;
+        }
+        if (inventory.selectedItem == bigPotion)
+        {
+            potentialPlayerHealthBarHolder.SetActive(true);
+            potentialPlayerHealthBar.value = playerHealth + 40;
+        }
+        if (inventory.selectedItem != potion && inventory.selectedItem != bigPotion)
+        {
+            potentialPlayerHealthBarHolder.SetActive(false);
+        }
+
+    }
+
+
 }
