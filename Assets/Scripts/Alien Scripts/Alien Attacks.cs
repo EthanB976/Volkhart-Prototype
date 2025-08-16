@@ -25,10 +25,10 @@ public class AlienAttacks : MonoBehaviour
 
             if (enemyrigidbody != null)
             {
-                //Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
-                //float knockForce = 5f;
-                //Debug.Log("apply force");
-                //enemyrigidbody.AddForce(knockbackDirection * knockForce, ForceMode2D.Impulse);
+                Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
+                float knockForce = 8f;
+                Debug.Log("apply force");
+                enemyrigidbody.AddForce(knockbackDirection * knockForce, ForceMode2D.Impulse);
 
                 StartCoroutine(alienBase.SlimeDamage(0.5f));
             }

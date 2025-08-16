@@ -7,7 +7,7 @@ public class Attack : MonoBehaviour
     public GameObject melee;
     public Animator meleeAttack;
     public bool isAttacking = false;
-    public float atkDuration = 0.3f;
+    public float attackDuration = 0.25f;
     public float resetDelay = 0.1f;
     public float attackDistance = 1.5f;
     public float attackSpeed = 10f;
@@ -15,38 +15,31 @@ public class Attack : MonoBehaviour
 
     public InventoryManager inventory;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Start()
     {
-        originalLocalPos = melee.transform.localPosition; 
+        melee.SetActive(false);
     }
-
 
     public IEnumerator OnAttack()
     {
+        if (isAttacking)
+            yield break;
+
         isAttacking = true;
 
+        soundManager.SwordSwing();
         melee.SetActive(true);
+
         meleeAttack.SetTrigger("Attack");
+        
+        yield return new WaitForSeconds(attackDuration);
 
-        Vector2 attackDir = Vector2.down;
-        Vector2 targetLocalPos = originalLocalPos + attackDir * attackDistance;
-
-
-        float t = 0f;
-        while (t < 1f)
-        {
-            t += Time.deltaTime * attackSpeed;
-            melee.transform.localPosition = Vector2.Lerp(originalLocalPos, targetLocalPos, t);
-            yield return null;
-        }
-
-       
-
-        yield return new WaitForSeconds(atkDuration);
-        melee.transform.localPosition = originalLocalPos;
         melee.SetActive(false);
-
         isAttacking = false;
     }
+
+
 }

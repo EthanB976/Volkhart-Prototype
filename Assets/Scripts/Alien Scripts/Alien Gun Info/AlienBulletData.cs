@@ -48,10 +48,10 @@ public class AlienBulletData : MonoBehaviour
 
             if (enemyrigidbody != null)
             {
-            //    Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
-            //    float knockForce = 5f;
+                Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
+                float knockForce = 8f;
 
-            //    enemyrigidbody.AddForce(knockbackDirection * knockForce, ForceMode2D.Impulse);
+                enemyrigidbody.AddForce(knockbackDirection * knockForce, ForceMode2D.Impulse);
             }
         }
     }

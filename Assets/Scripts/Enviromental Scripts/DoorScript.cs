@@ -11,6 +11,8 @@ public class DoorScript : MonoBehaviour
     public GameObject door;
     private bool inDoorArea;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Update()
     {
@@ -42,6 +44,7 @@ public class DoorScript : MonoBehaviour
 
         door.SetActive(false);
 
+        soundManager.DoorOpening();
 
     }
 
