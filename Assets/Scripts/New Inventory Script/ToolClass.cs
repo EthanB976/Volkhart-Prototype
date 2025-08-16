@@ -20,6 +20,11 @@ public class ToolClass : ItemClass
         base.Use(caller);
         if (toolType == ToolType.Weapon)
         {
+            if (caller.attack.isAttacking)
+            {
+                return;
+            }
+
             Debug.Log("Sword Swung");
             caller.StartCoroutine(caller.attack.OnAttack());
         }

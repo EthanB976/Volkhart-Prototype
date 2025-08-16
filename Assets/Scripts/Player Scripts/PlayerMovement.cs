@@ -12,9 +12,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Vector2 movement;
 
-    [SerializeField] private Transform Aim;
-    [SerializeField] private Transform Weapon;
-
     [SerializeField] private float dashSpeed = 10f;
     [SerializeField] private float dashDuration = 1f;
     [SerializeField] private float dashCoolDown = 1f;
@@ -52,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetFloat("Vertical", movement.y);
                 animator.SetFloat("Speed", movement.sqrMagnitude);
 
-                RotateAim();
             }
             
         }
@@ -89,15 +85,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void RotateAim()
-    {
-        if (movement.sqrMagnitude > 0.01f)
-        {
-            float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-            Aim.rotation = Quaternion.Euler(0, 0, angle);
-            Weapon.rotation = Quaternion.Euler(0, 0, angle);
-        }
-    }
 
     private void FixedUpdate()
     {

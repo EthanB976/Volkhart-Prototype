@@ -17059,8 +17059,8 @@ MonoBehaviour:
   melee: {fileID: 926074612}
   meleeAttack: {fileID: 1200204883}
   isAttacking: 0
-  atkDuration: 0.5
-  resetDelay: 0.1
+  attackDuration: 0.25
+  resetDelay: 0.3
   attackDistance: 2
   attackSpeed: 10
   originalLocalPos: {x: 0, y: 0}
@@ -17148,8 +17148,6 @@ MonoBehaviour:
   rb2d: {fileID: 760585869}
   animator: {fileID: 760585874}
   movement: {x: 0, y: 0}
-  Aim: {fileID: 909691298}
-  Weapon: {fileID: 926074613}
   dashSpeed: 1000
   dashDuration: 0.2
   dashCoolDown: 0.5
@@ -18685,7 +18683,7 @@ Transform:
   m_GameObject: {fileID: 909691297}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18699,14 +18697,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909691297}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fc4c16d57713604b91e562c8e351936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   turretRotationSpeed: 1000
   mainCamera: {fileID: 1167236089}
-  attack: {fileID: 760585872}
+  player: {fileID: 760585868}
 --- !u!1 &926074612
 GameObject:
   m_ObjectHideFlags: 0
@@ -18718,7 +18716,6 @@ GameObject:
   - component: {fileID: 926074613}
   - component: {fileID: 926074616}
   - component: {fileID: 926074615}
-  - component: {fileID: 926074617}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -18734,8 +18731,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926074612}
   serializedVersion: 2
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.68, y: -0.24, z: 0}
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: 0.6800003, y: 0.008000061, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18776,7 +18773,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.35514677, y: -0.042673275}
+  m_Offset: {x: 0.7926209, y: 0.10241562}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18786,7 +18783,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.7490757, y: 0.6560477}
+  m_Size: {x: 1.9232745, y: 0.4231814}
   m_EdgeRadius: 0
 --- !u!114 &926074616
 MonoBehaviour:
@@ -18800,33 +18797,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36eb1e2bbe52ef5479ed82af32abd46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 35
   melee: {fileID: 926074612}
   Rigidbody2D: {fileID: 760585869}
   soundManager: {fileID: 1178055394}
   soundThreshold: 0.1
---- !u!95 &926074617
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926074612}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b25399cf0dfce14499db5d6052114416, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &946475879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19084,7 +19059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretRotationSpeed: 500
   mainCamera: {fileID: 1167236089}
-  attack: {fileID: 760585872}
+  player: {fileID: 760585868}
 --- !u!224 &1006436319 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4678851349021063233, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
@@ -20028,8 +20003,8 @@ Transform:
   m_GameObject: {fileID: 1200204880}
   serializedVersion: 2
   m_LocalRotation: {x: 0.9255405, y: 0.37864867, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.46, y: 0.09, z: 0}
+  m_LocalScale: {x: 1.7839266, y: 1.7839266, z: 1.7839266}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 926074613}
@@ -98959,6 +98934,18 @@ PrefabInstance:
     - target: {fileID: 1844979601421793140, guid: 88125bd684f51b64e962874d93fd13b9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251827810569849298, guid: 88125bd684f51b64e962874d93fd13b9, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251827810569849298, guid: 88125bd684f51b64e962874d93fd13b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -9074539206338946419, guid: df5c32ba92bc06e4ab0827922886ab43, type: 3}
+    - target: {fileID: 5251827810569849298, guid: 88125bd684f51b64e962874d93fd13b9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5613019441819965549, guid: 88125bd684f51b64e962874d93fd13b9, type: 3}
       propertyPath: soundManager

@@ -7,7 +7,7 @@ public class Attack : MonoBehaviour
     public GameObject melee;
     public Animator meleeAttack;
     public bool isAttacking = false;
-    public float atkDuration = 0.3f;
+    public float attackDuration = 0.25f;
     public float resetDelay = 0.1f;
     public float attackDistance = 1.5f;
     public float attackSpeed = 10f;
@@ -26,25 +26,20 @@ public class Attack : MonoBehaviour
     public IEnumerator OnAttack()
     {
         if (isAttacking)
-        {
             yield break;
-        }
 
         isAttacking = true;
 
         soundManager.SwordSwing();
-
         melee.SetActive(true);
 
-        yield return null;
-
-
         meleeAttack.SetTrigger("Attack");
-        Debug.Log("PlayAnimation");
+        
+        yield return new WaitForSeconds(attackDuration);
 
-        yield return new WaitForSeconds(atkDuration);
         melee.SetActive(false);
-
         isAttacking = false;
     }
+
+
 }
