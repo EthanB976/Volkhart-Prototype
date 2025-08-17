@@ -31,7 +31,7 @@ public class KeyTasks : MonoBehaviour
 
     private void WinGame()
     {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
