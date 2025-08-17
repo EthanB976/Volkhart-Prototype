@@ -26607,6 +26607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies: []
   lefttoRightMovement: {fileID: 1466701348}
+  playerRB: {fileID: 1860074431}
 --- !u!4 &883401189
 Transform:
   m_ObjectHideFlags: 0
@@ -71333,6 +71334,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16df82a5b642f464eafca3450c4ef9e8, type: 3}
+--- !u!50 &1860074431 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8141998266999184451, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+  m_PrefabInstance: {fileID: 1035315238583980057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1861623154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8127752381874051343, guid: 16df82a5b642f464eafca3450c4ef9e8, type: 3}
