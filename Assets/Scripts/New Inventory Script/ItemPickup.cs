@@ -22,11 +22,12 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            soundManager.ItemPickUp();
             StartCoroutine(DisplayInfo());
             inventoryManager.AddItem(item, amount);
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<Collider2D>().enabled = false;
-            soundManager.ItemPickUp();
+            
         }
     }
 
