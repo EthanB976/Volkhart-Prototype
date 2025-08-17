@@ -56,6 +56,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6427875939251622111, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427875939251622111, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427875939251622111, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351046505731875862, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -676799304, guid: 788e5a6c579d2a147af7ddea45166345, type: 3}
     - target: {fileID: 7351046505731875862, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
       propertyPath: m_SortingOrder
       value: 5
