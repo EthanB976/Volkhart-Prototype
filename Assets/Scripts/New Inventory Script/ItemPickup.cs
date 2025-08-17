@@ -13,6 +13,9 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemText;
     [SerializeField] GameObject itemPickedUpUI;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -23,6 +26,7 @@ public class ItemPickup : MonoBehaviour
             inventoryManager.AddItem(item, amount);
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<Collider2D>().enabled = false;
+            soundManager.ItemPickUp();
         }
     }
 

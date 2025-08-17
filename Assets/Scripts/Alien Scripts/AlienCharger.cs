@@ -21,6 +21,9 @@ public class AlienCharger : MonoBehaviour
     [SerializeField] private AlienBase alienBase;
     [SerializeField] private GameObject warning;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     private void Start()
     {
         alienBase = GetComponent<AlienBase>();
@@ -99,6 +102,7 @@ public class AlienCharger : MonoBehaviour
         isCharging = true;
 
         rb2D.linearVelocity = chargeDirection * speed * 5f;
+        soundManager.Woosh();
 
         yield return new WaitForSeconds(chargeDuration);
 

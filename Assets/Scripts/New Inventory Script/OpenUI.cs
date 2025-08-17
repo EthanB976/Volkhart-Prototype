@@ -8,12 +8,16 @@ public class OpenUI : MonoBehaviour
     public GameObject cursor;
     public TypeWriteEffect typeWriteEffect;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     void Update()
     {
      
         if (Input.GetKeyDown(KeyCode.Tab) && typeWriteEffect.dialogueUI.activeSelf == false)
         {
             ToggleInventory();
+            soundManager.OpenInventory();
         }
 
         if(typeWriteEffect.dialogueUI.activeSelf == true)

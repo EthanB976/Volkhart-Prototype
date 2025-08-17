@@ -19,8 +19,13 @@ public class Grenade : MonoBehaviour
 
     private bool hasExploded = false;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     private void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
+
         // Lock target position at throw time
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
@@ -46,6 +51,7 @@ public class Grenade : MonoBehaviour
             {
                 rb.linearVelocity = Vector2.zero;
                 hasReachedTarget = true;
+                soundManager.GranadeSlam();
             }
         }
 
@@ -77,6 +83,7 @@ public class Grenade : MonoBehaviour
 
                 if (enemyrigidbody != null)
                 {
+                    soundManager.GrenadeExplosion();
                     Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
                     float knockForce = 50f;
 

@@ -105407,6 +105407,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5344035579606344100, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+      propertyPath: dashSpeed
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344035579606344100, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+      propertyPath: moveSpeed
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344035579606344100, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+      propertyPath: dashDuration
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344035579606344100, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
