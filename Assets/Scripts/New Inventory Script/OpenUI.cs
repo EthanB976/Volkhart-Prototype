@@ -5,6 +5,7 @@ public class OpenUI : MonoBehaviour
     public GameObject inventoryPanel;
     public GameObject hotbarPanel;
     public GameObject craftingPanel;
+    public GameObject playerInfoPanel;
     public GameObject cursor;
     public TypeWriteEffect typeWriteEffect;
 
@@ -31,12 +32,14 @@ public class OpenUI : MonoBehaviour
         {
             inventoryPanel.SetActive(true);
             hotbarPanel.SetActive(false);
+            playerInfoPanel.SetActive(false);
             cursor.SetActive(true);
         }
         else
         {
             inventoryPanel.SetActive(false);
             hotbarPanel.SetActive(true);
+            playerInfoPanel.SetActive(true);
             cursor.SetActive(false);
             craftingPanel.SetActive(false);
         }
@@ -50,6 +53,7 @@ public class OpenUI : MonoBehaviour
     {
         inventoryPanel.SetActive(false);
         hotbarPanel.SetActive(true);
+        playerInfoPanel.SetActive(true);
         cursor.SetActive(false);
         craftingPanel.SetActive(false);
 
