@@ -8,10 +8,7 @@ public class ShipDefences : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inArea == true)
-        {
-            TurnDefencesOff();
-        }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,11 +27,5 @@ public class ShipDefences : MonoBehaviour
         }
     }
 
-    private void TurnDefencesOff()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            keyTasks.TurnOffShipDefences();
-        }
-    }
+ 
 }
