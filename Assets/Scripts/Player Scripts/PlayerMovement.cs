@@ -110,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.IgnoreLayerCollision(7, 9, true);
         Vector2 direction = movement.normalized;
         rb2d.AddForce(direction * dashSpeed);
+        soundManager.Woosh();
         StartCoroutine(DashDuration());
     }
 

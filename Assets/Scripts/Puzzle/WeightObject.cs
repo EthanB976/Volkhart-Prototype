@@ -6,6 +6,9 @@ public class WeightObject : MonoBehaviour
 
     [HideInInspector] public Vector3 startPosition;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     private void Awake()
     {
         startPosition = transform.position; // store starting location
@@ -19,6 +22,22 @@ public class WeightObject : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            soundManager.MovingObjects();
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+              soundManager.MovingObjectss();
         }
     }
 }

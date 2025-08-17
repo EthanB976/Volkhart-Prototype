@@ -6,6 +6,9 @@ public class PressurePlate : MonoBehaviour
     [SerializeField] private GameObject wrongColour;
     [SerializeField] private GameObject rightColour;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private float soundThreshold = 0.1f;
+
     public bool IsCorrect { get; private set; } = false;
 
     private void Start()
@@ -34,6 +37,8 @@ public class PressurePlate : MonoBehaviour
             rightColour.SetActive(false);
 
             IsCorrect = false;
+
+            soundManager.PlateClick();
         }
     }
 
@@ -43,13 +48,13 @@ public class PressurePlate : MonoBehaviour
         {
             rightColour.SetActive(true);
             IsCorrect = true;
-            Debug.Log("Success");
+            soundManager.PlateClick();
         }
         else
         {
             wrongColour.SetActive(true);
             IsCorrect = false;
-            Debug.Log("Fail");
+            soundManager.PlateClick();
         }
     }
 }
