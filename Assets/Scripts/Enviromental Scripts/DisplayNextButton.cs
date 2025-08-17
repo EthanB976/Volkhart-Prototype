@@ -11,7 +11,7 @@ public class DisplayNextButton : MonoBehaviour
 
     private void OnDisable()
     {
-        TypeWriteEffect.CompleteTextRevealed -= ShowNextButton;
+        TypeWriteEffect.CompleteTextRevealed -= HideNextButton;
     }
 
     private void ShowNextButton()

@@ -114,7 +114,7 @@ public class PlayerBase : MonoBehaviour
         if (inventory.selectedItem == bigPotion)
         {
             potentialPlayerHealthBarHolder.SetActive(true);
-            potentialPlayerHealthBar.value = playerHealth + 40;
+            potentialPlayerHealthBar.value = playerHealth + 50;
         }
         if (inventory.selectedItem != potion && inventory.selectedItem != bigPotion)
         {
