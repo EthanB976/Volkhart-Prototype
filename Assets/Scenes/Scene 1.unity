@@ -2640,6 +2640,10 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
+    - target: {fileID: 2510408797537246727, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: chargeDuration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4403615557999212665, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: Damage
       value: 20
@@ -2653,9 +2657,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 253343312}
     - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: health
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 253343311}
+    - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: soundManager
       value: 
@@ -3549,8 +3561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a894e809ecd0d7d47bf7bc62c3161a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
+  health: 50
+  maxHealth: 50
   rb: {fileID: 327447697}
   Alien: {fileID: 327447696}
   stunned: 0
@@ -4767,8 +4779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a894e809ecd0d7d47bf7bc62c3161a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
+  health: 50
+  maxHealth: 50
   rb: {fileID: 443965074}
   Alien: {fileID: 443965073}
   stunned: 0
@@ -6228,8 +6240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a894e809ecd0d7d47bf7bc62c3161a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
+  health: 50
+  maxHealth: 50
   rb: {fileID: 557548149}
   Alien: {fileID: 557548148}
   stunned: 0
@@ -6476,7 +6488,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: coolDown
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: retreatRange
@@ -22976,6 +22988,10 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
+    - target: {fileID: 2510408797537246727, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: chargeDuration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4403615557999212665, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: Damage
       value: 20
@@ -22989,9 +23005,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 613637006}
     - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: health
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 613637005}
+    - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: soundManager
       value: 
@@ -25096,8 +25120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a894e809ecd0d7d47bf7bc62c3161a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
+  health: 50
+  maxHealth: 50
   rb: {fileID: 775978682}
   Alien: {fileID: 775978681}
   stunned: 0
@@ -25863,7 +25887,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: coolDown
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: retreatRange
@@ -27344,8 +27368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a894e809ecd0d7d47bf7bc62c3161a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
+  health: 50
+  maxHealth: 50
   rb: {fileID: 938354350}
   Alien: {fileID: 938354349}
   stunned: 0
@@ -27780,8 +27804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a894e809ecd0d7d47bf7bc62c3161a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
+  health: 50
+  maxHealth: 50
   rb: {fileID: 988177338}
   Alien: {fileID: 988177337}
   stunned: 0
@@ -28347,7 +28371,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: coolDown
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: retreatRange
@@ -30568,9 +30592,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1253827267}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: health
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1253827266}
+    - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: maxHealth
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: soundManager
       value: 
@@ -31515,9 +31547,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1384203466}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: health
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1384203465}
+    - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: maxHealth
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: soundManager
       value: 
@@ -32218,7 +32258,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: coolDown
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: retreatRange
@@ -70051,7 +70091,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: coolDown
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 58190720191860081, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: retreatRange
@@ -121132,9 +121172,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2049701683}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: health
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2049701682}
+    - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: maxHealth
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: soundManager
       value: 
@@ -121631,6 +121679,10 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
+    - target: {fileID: 2510408797537246727, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: chargeDuration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4403615557999212665, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: Damage
       value: 20
@@ -121644,9 +121696,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2087490725}
     - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: health
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2087490724}
+    - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: soundManager
       value: 
@@ -121853,6 +121913,10 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
+    - target: {fileID: 2510408797537246727, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: chargeDuration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4403615557999212665, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: Damage
       value: 20
@@ -121866,9 +121930,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1571415889}
     - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: health
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 134133769}
+    - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: soundManager
       value: 
@@ -123193,9 +123265,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1480320346}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: health
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 544145118}
+    - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: maxHealth
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: soundManager
       value: 
@@ -123241,8 +123321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a894e809ecd0d7d47bf7bc62c3161a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
+  health: 50
+  maxHealth: 50
   rb: {fileID: 438831121184753138}
   Alien: {fileID: 438831121184753137}
   stunned: 0
