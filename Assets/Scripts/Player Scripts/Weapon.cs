@@ -19,7 +19,6 @@ public class Weapon : MonoBehaviour
         if (other.tag == "Enemy")
         {
             other.GetComponent<AlienBase>().TakeDamage(Damage);
-            Debug.Log("Enemy Hit");
 
             Rigidbody2D enemyrigidbody = other.GetComponent<Rigidbody2D>();
 
@@ -37,7 +36,6 @@ public class Weapon : MonoBehaviour
         if (other.tag == "Slime")
         {
             other.GetComponent<AlienBases>().TakeDamage(Damage);
-            Debug.Log("Enemy Hit");
 
             Rigidbody2D enemyrigidbody = other.GetComponent<Rigidbody2D>();
 

@@ -67,7 +67,6 @@ public class Grenade : MonoBehaviour
 
     private void Explode()
     {
-        Debug.Log("Grenade exploded!"); // confirm it's called
         soundManager.GrenadeExplosion();
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius, damageLayer);
 

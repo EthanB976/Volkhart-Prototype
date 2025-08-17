@@ -67,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
                 {
                     soundManager.FootSteps();
 
-                    Debug.Log("Walking sounds");
                 }
                 
             }
@@ -76,7 +75,6 @@ public class PlayerMovement : MonoBehaviour
                 if (soundManager.footSteps.isPlaying)
                 {
                     soundManager.FootStepss();
-                    Debug.Log("Stopped walking");
                 }
                     
             }
@@ -127,6 +125,5 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
-        Debug.Log("Player Dashed");
     }
 }

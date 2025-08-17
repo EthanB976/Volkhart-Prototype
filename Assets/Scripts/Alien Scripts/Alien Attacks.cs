@@ -18,16 +18,13 @@ public class AlienAttacks : MonoBehaviour
         //Enemy Takes Damage
         if (other.tag == "Player")      
         {
-            Debug.Log("Attack player");
             other.GetComponent<PlayerBase>().TakeDamage(Damage);
-            Debug.Log("Player Hit");
 
             Rigidbody2D enemyrigidbody = other.GetComponent<Rigidbody2D>();
 
             if (enemyrigidbody != null)
             {
                 Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
-                Debug.Log("apply force");
                 enemyrigidbody.AddForce(knockbackDirection * knockBack, ForceMode2D.Impulse);
 
                 StartCoroutine(alienBase.SlimeDamage(0.5f));
