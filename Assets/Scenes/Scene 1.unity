@@ -2262,8 +2262,8 @@ Transform:
   m_GameObject: {fileID: 229131648}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.4515, y: 20.9896, z: 0}
-  m_LocalScale: {x: 16.597025, y: 17.869905, z: 1}
+  m_LocalPosition: {x: 32.0615, y: 20.9896, z: 0}
+  m_LocalScale: {x: 23.37601, y: 17.869905, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 360506882}
@@ -4712,15 +4712,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 75786659836523410, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 75786659836523410, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: m_Name
       value: Slime Enemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: m_TagString
@@ -120431,7 +120435,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967292829}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -122861,13 +122865,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 453112516671950542, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1751623602181228394, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1751623602181228394, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 1751623602181228394, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
       propertyPath: m_LocalPosition.z
@@ -123045,6 +123053,10 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
+    - target: {fileID: 6202256564455714075, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+      propertyPath: attackDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7437202332920181847, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
       propertyPath: m_StopNaN
       value: 1
@@ -123591,6 +123603,10 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
+    - target: {fileID: 7630176130143521109, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: bulletPoolCount
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

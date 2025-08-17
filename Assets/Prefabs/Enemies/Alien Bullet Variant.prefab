@@ -9,6 +9,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 342644193193220253, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 342644193193220253, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 342644193193220253, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342644193193220253, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.03
       objectReference: {fileID: 0}
@@ -71,7 +83,19 @@ PrefabInstance:
     - target: {fileID: 7351046505731875862, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -676799304, guid: 788e5a6c579d2a147af7ddea45166345, type: 3}
+      objectReference: {fileID: 21300000, guid: 28a95a634e934b899b70c2c99be00bc6, type: 3}
+    - target: {fileID: 7351046505731875862, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.99143386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351046505731875862, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351046505731875862, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7351046505731875862, guid: ae473bc4a9a323c4285f936f69b2d1e7, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -116,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 10
   bulletDamage: 10
-  maxDistance: 100
+  maxDistance: 15
   startPosition: {x: 0, y: 0}
   distanceTravelled: 0
   rb2d: {fileID: 6590803316773725186}
