@@ -1176,6 +1176,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &134133769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5708450873865371125, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+  m_PrefabInstance: {fileID: 2138144990}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &178635351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4293,6 +4298,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &544145118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4672114067320731426, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+  m_PrefabInstance: {fileID: 4127566801232542949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &547885785
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,6 +4636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grenader Alien Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2851418920838333929, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 652706498}
     - target: {fileID: 2851418920838333929, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: soundManager
       value: 
@@ -21262,6 +21276,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3774137103185674176, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
   m_PrefabInstance: {fileID: 2086784625}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &652706498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2518728700776617470, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
+  m_PrefabInstance: {fileID: 568135485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &666127454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1751623602181228394, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
@@ -21456,6 +21475,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &687187351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2182119183239878500, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+  m_PrefabInstance: {fileID: 438831121184753134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &710187164
 GameObject:
   m_ObjectHideFlags: 0
@@ -22223,6 +22247,16 @@ GameObject:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4678851349021063233, guid: b5358c1d3a242bb46abc11f6ae35ba55, type: 3}
   m_PrefabInstance: {fileID: 3156972422431735529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &789007184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7474098078556160649, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+  m_PrefabInstance: {fileID: 1035315238583980057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &789007185 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9130488930399127387, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+  m_PrefabInstance: {fileID: 1035315238583980057}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &790750609 stripped
 RectTransform:
@@ -61131,6 +61165,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1703412693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2080057175095689694, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
+  m_PrefabInstance: {fileID: 622678454227401895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1723234387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3774137103185674176, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
@@ -106599,6 +106638,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 134133769}
+    - target: {fileID: 5358837004655783394, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
@@ -106827,6 +106870,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3218114707826279772}
     - target: {fileID: 6157234112623598731, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 687187351}
+    - target: {fileID: 6157234112623598731, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
@@ -106989,6 +107036,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1854301023547314633, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1703412693}
+    - target: {fileID: 1854301023547314633, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1178055394}
@@ -107145,6 +107196,14 @@ PrefabInstance:
       propertyPath: inventoryManager
       value: 
       objectReference: {fileID: 880203916}
+    - target: {fileID: 3098291276148931152, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 789007184}
+    - target: {fileID: 3098291276148931152, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 789007185}
     - target: {fileID: 4009589436609494413, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -107678,6 +107737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranged Alien
       objectReference: {fileID: 0}
+    - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 544145118}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: soundManager
       value: 
