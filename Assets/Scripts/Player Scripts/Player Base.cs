@@ -79,7 +79,7 @@ public class PlayerBase : MonoBehaviour
         if (playerHealth <= 0)
         {
 
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
     }

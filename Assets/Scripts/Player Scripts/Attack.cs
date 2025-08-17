@@ -37,6 +37,9 @@ public class Attack : MonoBehaviour
         yield return new WaitForSeconds(attackDuration);
 
         melee.SetActive(false);
+
+        yield return new WaitForSeconds(resetDelay);
+
         isAttacking = false;
     }
 

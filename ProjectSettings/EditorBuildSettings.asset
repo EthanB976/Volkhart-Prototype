@@ -15,20 +15,20 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: ca9e5feb72ba6e04592c27fe78e27549
   - enabled: 1
-    path: Assets/Scenes/Alien test.unity
-    guid: a5a273d2c33c4b7449e9bffe1578d272
-  - enabled: 1
-    path: Assets/Scenes/ShipTest.unity
-    guid: ebe24fd121aebbc4f9268521cdbb1e86
-  - enabled: 1
-    path: Assets/Scenes/ShipTest 1.unity
-    guid: 199802652e2083a47a724029740f6ad9
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 2a52c831c599a53498f6a17fad7f7aaf
-  - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: b7769fb2259f4a74584da8826235fbee
+  - enabled: 0
+    path: Assets/Scenes/Alien test.unity
+    guid: a5a273d2c33c4b7449e9bffe1578d272
+  - enabled: 0
+    path: Assets/Scenes/ShipTest.unity
+    guid: ebe24fd121aebbc4f9268521cdbb1e86
+  - enabled: 0
+    path: Assets/Scenes/ShipTest 1.unity
+    guid: 199802652e2083a47a724029740f6ad9
+  - enabled: 0
+    path: Assets/Scenes/Tutorial.unity
+    guid: 2a52c831c599a53498f6a17fad7f7aaf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

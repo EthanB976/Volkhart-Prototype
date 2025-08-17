@@ -7,7 +7,7 @@ public class FreezeAllRigidBody : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        lefttoRightMovement = FindAnyObjectByType<LefttoRightMovement>();
     }
 
     // Update is called once per frame
