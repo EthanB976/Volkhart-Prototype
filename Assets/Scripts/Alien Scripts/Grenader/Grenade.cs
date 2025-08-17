@@ -70,6 +70,7 @@ public class Grenade : MonoBehaviour
     private void Explode()
     {
         Debug.Log("Grenade exploded!"); // confirm it's called
+        soundManager.GrenadeExplosion();
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius, damageLayer);
 
         foreach (Collider2D other in hits)
@@ -83,7 +84,7 @@ public class Grenade : MonoBehaviour
 
                 if (enemyrigidbody != null)
                 {
-                    soundManager.GrenadeExplosion();
+                    
                     Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
                     float knockForce = 50f;
 

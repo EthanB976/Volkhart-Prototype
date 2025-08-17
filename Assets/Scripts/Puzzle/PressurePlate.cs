@@ -38,7 +38,6 @@ public class PressurePlate : MonoBehaviour
 
             IsCorrect = false;
 
-            soundManager.PlateClick();
         }
     }
 

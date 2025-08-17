@@ -23,15 +23,19 @@ public class AlienBase : MonoBehaviour
     [SerializeField] private SoundManager soundManager;
     [SerializeField] private float soundThreshold = 0.1f;
 
+    [SerializeField] private GameObject healthBar;
+
     private void Start()
     {
         health = maxHealth;
         enemyHealthBar.maxValue = maxHealth;
         enemyHealthBar.value = health;
+        healthBar.SetActive(false);
     }
 
     public void TakeDamage(float damage)
     {
+        healthBar.SetActive(true);
         health -= damage;
         enemyHealthBar.value = health;
         soundManager.DamageAlien();
