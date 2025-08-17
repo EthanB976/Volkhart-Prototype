@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - doorTrigger
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

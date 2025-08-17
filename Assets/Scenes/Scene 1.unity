@@ -2815,11 +2815,11 @@ PrefabInstance:
       objectReference: {fileID: 878736870}
     - target: {fileID: 4572759901926855519, guid: b85ca23dde7c5b14292d913b0a493524, type: 3}
       propertyPath: dialogueText
-      value: Scans indicate resources required to fix ship ahead. <br>Scans also
-        found weapon better suited for survival located above. <br>Warning analysis
-        of the Volkart reveals ships offensive capabilities have been turned back
-        on. <br>Escaping via shuttle impossible while they are active. The control
-        room to disable these are located below.
+      value: "Scans indicate that the door to Hanger Bay 09 is non-functional. <br>Scanning
+        for a new solution\u2026. <br>Scans indicate the parts needed to repair the
+        door can be located ahead through the yellow path.  <br>Scans have also found
+        a weapon better suited for survival located above. <br>Please acquire the
+        new weapon before proceeding through to Hanger Bay 09."
       objectReference: {fileID: 0}
     - target: {fileID: 4572759901926855519, guid: b85ca23dde7c5b14292d913b0a493524, type: 3}
       propertyPath: typeWriteEffect
@@ -2900,8 +2900,8 @@ PrefabInstance:
     - target: {fileID: 4572759901926855519, guid: b85ca23dde7c5b14292d913b0a493524, type: 3}
       propertyPath: dialogueText
       value: 'Systems indicate that the door ahead requires a keycard to unlock.
-        <br>Resources in this room should be sucfient to craft required key. Resources
-        and Crafting Menu can be accessed with Tab Button. '
+        <br>Resources in this room should be sufficient to craft the required key.
+        Resources and Crafting Menu can be accessed with Tab Button. '
       objectReference: {fileID: 0}
     - target: {fileID: 4572759901926855519, guid: b85ca23dde7c5b14292d913b0a493524, type: 3}
       propertyPath: typeWriteEffect
@@ -4843,6 +4843,10 @@ PrefabInstance:
     - target: {fileID: 158974934549497069, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: m_Name
       value: Grenader Alien Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 158974934549497069, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2851418920838333929, guid: 46890a0393fef9a429cc2605bd27743b, type: 3}
       propertyPath: healthBar
@@ -23334,6 +23338,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &883401187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883401189}
+  - component: {fileID: 883401188}
+  m_Layer: 0
+  m_Name: RigidBody Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &883401188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883401187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f3541c12e755842b45fb436e0aeaf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: []
+  lefttoRightMovement: {fileID: 1466701348}
+--- !u!4 &883401189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883401187}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.160444, y: 10.677848, z: 0.32837936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &885747369
 GameObject:
   m_ObjectHideFlags: 0
@@ -26127,13 +26177,12 @@ PrefabInstance:
       objectReference: {fileID: 878736870}
     - target: {fileID: 4572759901926855519, guid: b85ca23dde7c5b14292d913b0a493524, type: 3}
       propertyPath: dialogueText
-      value: Brrzttt.... Systems Intializing.... Catastrophic Emergency Situation
+      value: 'Brrzttt.... Systems Initializing.... Catastrophic Emergency Situation
         Response Unit Online.... <br>Hello. This system has been brought online in
-        response to a extreme hostile force detected in the surronding area. <br>Scanning
+        response to an extreme hostile force detected in the surrounding area. <br>Scanning
         nearby areas for resources required for survival please hold.<br>Detected
-        neary shuttle that can be used for escape. Warning shuttle engine requires
-        immediate repairs. Parts required for repair located further inwards of The
-        Volkart Space Vessel.<br>Please proceed carefully to required parts.
+        a nearby shuttle that can be used for escape. <br>Please navigate further
+        into the Volkart to Hanger Bay 09. '
       objectReference: {fileID: 0}
     - target: {fileID: 4572759901926855519, guid: b85ca23dde7c5b14292d913b0a493524, type: 3}
       propertyPath: typeWriteEffect
@@ -27243,6 +27292,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446715521}
   m_CullTransparentMesh: 1
+--- !u!114 &1466701348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2539648744431798456, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+  m_PrefabInstance: {fileID: 1035315238583980057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f463b8cdf6f0a45897c2397e4bfdde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1475867179
 GameObject:
   m_ObjectHideFlags: 0
@@ -27556,7 +27616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1502880746
 Transform:
   m_ObjectHideFlags: 0
@@ -104999,6 +105059,7 @@ MonoBehaviour:
   skipSpeedup: 30
   sendDoneDelay: 0.1
   dialogueUI: {fileID: 878736870}
+  freezeAllRigidBody: {fileID: 883401188}
 --- !u!114 &1899192776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107016,6 +107077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chager Alien Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8068450967204392166, guid: 57be3ca5f5c68a24aa469fe60a6dc303, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -107223,6 +107288,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712509812029383284, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1956227393001304064, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: camera
       value: 
@@ -107413,6 +107486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Alien
       objectReference: {fileID: 0}
+    - target: {fileID: 4331689121078071501, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5860303590804997460, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
       propertyPath: m_LocalPosition.x
       value: 41.84
@@ -107480,7 +107557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1751623602181228394, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.13
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1751623602181228394, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
       propertyPath: m_LocalPosition.z
@@ -108053,7 +108130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1702446303205994791, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.22
+      value: 38.6
       objectReference: {fileID: 0}
     - target: {fileID: 1702446303205994791, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -108102,6 +108179,10 @@ PrefabInstance:
     - target: {fileID: 6436516712835542665, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: m_Name
       value: Ranged Alien
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436516712835542665, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6680430999101223231, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
       propertyPath: healthBar
@@ -108301,3 +108382,4 @@ SceneRoots:
   - {fileID: 1178055393}
   - {fileID: 304290594}
   - {fileID: 547885787}
+  - {fileID: 883401189}

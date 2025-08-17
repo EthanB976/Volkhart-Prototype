@@ -34,6 +34,8 @@ public class TypeWriteEffect : MonoBehaviour
 
     public GameObject dialogueUI;
 
+    [SerializeField] private FreezeAllRigidBody freezeAllRigidBody;
+
     private void Awake()
     {
         textBox = GetComponent<TMP_Text>();
@@ -65,6 +67,7 @@ public class TypeWriteEffect : MonoBehaviour
                 {
                     textFinishedDisplaying = false;
                     dialogueUI.SetActive(false);
+                    freezeAllRigidBody.UnfreezeAll();
                 }
             }
             if (Input.GetMouseButtonDown(1))
@@ -100,6 +103,7 @@ public class TypeWriteEffect : MonoBehaviour
 
     private IEnumerator TypeWriter()
     {
+        freezeAllRigidBody.FreezeAll();
         TMP_TextInfo textInfo = textBox.textInfo;
 
         while (currentVisibleCharacterIndex < textInfo.characterCount + 1)
@@ -159,5 +163,7 @@ public class TypeWriteEffect : MonoBehaviour
         yield return new WaitUntil(() => textBox.maxVisibleCharacters == textBox.textInfo.characterCount - 1);
         CurrentlySkipping = false;
     }
+
+    
 }
 
