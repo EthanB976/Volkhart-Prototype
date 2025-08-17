@@ -36,6 +36,8 @@ public class TypeWriteEffect : MonoBehaviour
 
     [SerializeField] private FreezeAllRigidBody freezeAllRigidBody;
 
+    [SerializeField] private SoundManager wordAudio;
+
     private void Awake()
     {
         textBox = GetComponent<TMP_Text>();
@@ -106,12 +108,15 @@ public class TypeWriteEffect : MonoBehaviour
         freezeAllRigidBody.FreezeAll();
         TMP_TextInfo textInfo = textBox.textInfo;
 
+        wordAudio.Dialogue();
+
         while (currentVisibleCharacterIndex < textInfo.characterCount + 1)
         {
             var lastCharacterIndex = textInfo.characterCount - 1;
 
             if (currentVisibleCharacterIndex == lastCharacterIndex)
             {
+                wordAudio.Dialogues();
                 textBox.maxVisibleCharacters++;
                 yield return textBoxFullEventDelay;
                 CompleteTextRevealed?.Invoke();

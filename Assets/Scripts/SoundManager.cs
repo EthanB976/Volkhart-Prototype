@@ -20,6 +20,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource plateClick;
     public AudioSource techSounds;
     public AudioSource woosh;
+    public AudioSource dialogue;
 
 
     public void Start()
@@ -124,6 +125,16 @@ public class SoundManager : MonoBehaviour
     public void Woosh()
     {
         woosh.Play();
+    }
+
+    public void Dialogue()
+    {
+        dialogue.Play();
+    }
+
+    public void Dialogues()
+    {
+        dialogue.Stop();
     }
 
 }
