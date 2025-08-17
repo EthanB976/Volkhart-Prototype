@@ -4,6 +4,7 @@ public class AlienAttacks : MonoBehaviour
 {
     [SerializeField] private float Damage = 5f;
     public Rigidbody2D Rigidbody2D;
+    [SerializeField] private float knockBack = 8f;
 
     [SerializeField] AlienBase alienBase;
 
@@ -26,9 +27,8 @@ public class AlienAttacks : MonoBehaviour
             if (enemyrigidbody != null)
             {
                 Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
-                float knockForce = 8f;
                 Debug.Log("apply force");
-                enemyrigidbody.AddForce(knockbackDirection * knockForce, ForceMode2D.Impulse);
+                enemyrigidbody.AddForce(knockbackDirection * knockBack, ForceMode2D.Impulse);
 
                 StartCoroutine(alienBase.SlimeDamage(0.5f));
             }
