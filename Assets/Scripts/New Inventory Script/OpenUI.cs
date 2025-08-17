@@ -10,7 +10,6 @@ public class OpenUI : MonoBehaviour
     public TypeWriteEffect typeWriteEffect;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     void Update()
     {

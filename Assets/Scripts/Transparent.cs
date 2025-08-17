@@ -5,17 +5,17 @@ public class Transparent : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float transparency = 0.5f;
 
-    [SerializeField] private Renderer renderer;
+    [SerializeField] private Renderer renderers;
 
     private void Start()
     {
-        renderer = GetComponent<Renderer>();
+        renderers = GetComponent<Renderer>();
 
-        if (renderer != null)
+        if (renderers != null)
         {
-            Color color = renderer.material.color;
+            Color color = renderers.material.color;
             color.a = transparency;
-            renderer.material.color = color;
+            renderers.material.color = color;
 
         }
     }

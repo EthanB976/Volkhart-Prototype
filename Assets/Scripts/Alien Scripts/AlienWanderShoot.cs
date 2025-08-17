@@ -7,7 +7,6 @@ using NUnit.Framework;
 public class AlienWanderShoot : MonoBehaviour
 {
     [SerializeField] private float wanderRange = 10f;
-    [SerializeField] private float wanderTimer = 10f;
     [SerializeField] private Vector2 wanderTarget;
     [SerializeField] private bool isWaiting = false;
     [SerializeField] private bool hasTarget = false;

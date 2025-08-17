@@ -7,7 +7,6 @@ public class PressurePlate : MonoBehaviour
     [SerializeField] private GameObject rightColour;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     public bool IsCorrect { get; private set; } = false;
 

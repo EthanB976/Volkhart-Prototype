@@ -36,7 +36,6 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryUI;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Start()
     {

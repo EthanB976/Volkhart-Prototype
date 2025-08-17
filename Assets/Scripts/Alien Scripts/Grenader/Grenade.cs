@@ -6,7 +6,6 @@ public class Grenade : MonoBehaviour
     [SerializeField] private float explosionTimer = 3f;
     [SerializeField] private float explosionRadius = 5f;
     [SerializeField] private int damage = 50;
-    [SerializeField] private float knockback = 50f;
     [SerializeField] private LayerMask damageLayer;
     [SerializeField] private Rigidbody2D rb;
 
@@ -20,7 +19,6 @@ public class Grenade : MonoBehaviour
     private bool hasExploded = false;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Start()
     {

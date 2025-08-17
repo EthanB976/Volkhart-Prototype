@@ -19,7 +19,6 @@ public class GunData : MonoBehaviour
     public ItemClass ammoAmount;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Start()
     {

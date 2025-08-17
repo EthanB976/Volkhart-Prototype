@@ -22,7 +22,6 @@ public class AlienCharger : MonoBehaviour
     [SerializeField] private GameObject warning;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Start()
     {

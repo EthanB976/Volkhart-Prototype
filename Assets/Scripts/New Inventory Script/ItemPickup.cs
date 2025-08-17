@@ -14,7 +14,6 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] GameObject itemPickedUpUI;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
 
 

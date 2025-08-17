@@ -3,15 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using System.Collections;
 using UnityEngine.UI;
 
 public class AlienBase : MonoBehaviour
 {
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float damage = 5f;
     [SerializeField] private Rigidbody2D rb;
 
     [SerializeField] private Animator Alien;
@@ -21,7 +18,6 @@ public class AlienBase : MonoBehaviour
     [SerializeField] private Slider enemyHealthBar;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     [SerializeField] private GameObject healthBar;
 

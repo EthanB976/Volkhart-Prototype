@@ -10,8 +10,6 @@ public class PlayerBase : MonoBehaviour
 {
     public float playerHealth = 100f;
     public float maxPlayerHealth = 100f;
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float damage = 5f;
     [SerializeField] public bool stunned = false;
 
     [SerializeField] private Rigidbody2D rb2d;
@@ -31,7 +29,6 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private Quaternion originalRotation;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
     [SerializeField] private ItemClass potion;
     [SerializeField] private ItemClass bigPotion;
     [SerializeField] private GameObject potentialPlayerHealthBarHolder;

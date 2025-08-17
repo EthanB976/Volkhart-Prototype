@@ -7,8 +7,6 @@ public class WeightObject : MonoBehaviour
     [HideInInspector] public Vector3 startPosition;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
-
     private void Awake()
     {
         startPosition = transform.position; // store starting location

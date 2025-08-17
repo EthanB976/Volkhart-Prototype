@@ -5,18 +5,18 @@ public class AlienHealthBar : MonoBehaviour
 {
     [SerializeField] private Slider enemyHealthBar;
 
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera cameras;
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 offSet;
 
     private void Awake()
     {
-        camera = FindAnyObjectByType<Camera>();
+        cameras = FindAnyObjectByType<Camera>();
     }
 
     private void Update()
     {
-        transform.rotation = camera.transform.rotation;
+        transform.rotation = cameras.transform.rotation;
         transform.position = target.position + offSet;
     }
 }

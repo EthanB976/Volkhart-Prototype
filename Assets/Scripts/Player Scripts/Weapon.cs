@@ -7,7 +7,6 @@ public class Weapon : MonoBehaviour
     public Rigidbody2D Rigidbody2D;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Awake()
     {

@@ -10,7 +10,6 @@ public class AlienGunData : MonoBehaviour
     [SerializeField] private ObjectPoolBullet bulletPool;
     [SerializeField] AlienBulletData bulletData;
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Start()
     {

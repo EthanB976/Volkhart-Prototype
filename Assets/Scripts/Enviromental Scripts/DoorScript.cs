@@ -12,7 +12,6 @@ public class DoorScript : MonoBehaviour
     private bool inDoorArea;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private float soundThreshold = 0.1f;
 
     private void Update()
     {
