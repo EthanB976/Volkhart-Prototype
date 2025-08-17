@@ -626,6 +626,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1618278690}
     - target: {fileID: 7286828127925991792, guid: a02e44d6d3f2eff47879d5867236fb2a, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
+    - target: {fileID: 7286828127925991792, guid: a02e44d6d3f2eff47879d5867236fb2a, type: 3}
       propertyPath: itemPickedUpUI
       value: 
       objectReference: {fileID: 1774735107}
@@ -760,6 +764,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 60
   startPosition: {x: 0, y: 0, z: 0}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!212 &102043115
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1310,6 +1316,10 @@ PrefabInstance:
       propertyPath: itemPickedUp
       value: 
       objectReference: {fileID: 1618278690}
+    - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
       propertyPath: itemPickedUpUI
       value: 
@@ -2091,6 +2101,8 @@ MonoBehaviour:
   correctWeight: 10
   wrongColour: {fileID: 993483593}
   rightColour: {fileID: 1132948054}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!212 &274847359
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3433,6 +3445,8 @@ MonoBehaviour:
   playerInfoPanel: {fileID: 300802350}
   cursor: {fileID: 1359943762}
   typeWriteEffect: {fileID: 1899192775}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!4 &507452567
 Transform:
   m_ObjectHideFlags: 0
@@ -21468,6 +21482,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1618278690}
     - target: {fileID: 7286828127925991792, guid: a02e44d6d3f2eff47879d5867236fb2a, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
+    - target: {fileID: 7286828127925991792, guid: a02e44d6d3f2eff47879d5867236fb2a, type: 3}
       propertyPath: itemPickedUpUI
       value: 
       objectReference: {fileID: 1774735107}
@@ -22150,6 +22168,10 @@ PrefabInstance:
       propertyPath: itemPickedUp
       value: 
       objectReference: {fileID: 1618278690}
+    - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
       propertyPath: itemPickedUpUI
       value: 
@@ -24247,6 +24269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 20
   startPosition: {x: 0, y: 0, z: 0}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!212 &1051969860
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24399,6 +24423,8 @@ MonoBehaviour:
   correctWeight: 7
   wrongColour: {fileID: 1046582688}
   rightColour: {fileID: 1187807989}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!212 &1066236986
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25005,6 +25031,14 @@ MonoBehaviour:
   alienGun: {fileID: 1313843315}
   alienTalking: {fileID: 1996409371}
   doorOpening: {fileID: 1829224029}
+  grenadeSlam: {fileID: 0}
+  grenadeExplosion: {fileID: 0}
+  itemPickUp: {fileID: 0}
+  movingObjects: {fileID: 0}
+  openInventory: {fileID: 0}
+  plateClick: {fileID: 0}
+  techSounds: {fileID: 0}
+  woosh: {fileID: 0}
 --- !u!1 &1187807989
 GameObject:
   m_ObjectHideFlags: 0
@@ -25113,6 +25147,10 @@ PrefabInstance:
       propertyPath: itemPickedUp
       value: 
       objectReference: {fileID: 1618278690}
+    - target: {fileID: 2306667903438398290, guid: 16df82a5b642f464eafca3450c4ef9e8, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 2306667903438398290, guid: 16df82a5b642f464eafca3450c4ef9e8, type: 3}
       propertyPath: itemPickedUpUI
       value: 
@@ -26039,6 +26077,10 @@ PrefabInstance:
       propertyPath: itemPickedUp
       value: 
       objectReference: {fileID: 1618278690}
+    - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
       propertyPath: itemPickedUpUI
       value: 
@@ -58271,6 +58313,8 @@ MonoBehaviour:
   correctWeight: 20
   wrongColour: {fileID: 1534486941}
   rightColour: {fileID: 781964784}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!212 &1558148394
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58677,6 +58721,10 @@ PrefabInstance:
       propertyPath: itemPickedUp
       value: 
       objectReference: {fileID: 1618278690}
+    - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
       propertyPath: itemPickedUpUI
       value: 
@@ -59539,6 +59587,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 7
   startPosition: {x: 0, y: 0, z: 0}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!212 &1677733743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59691,6 +59741,8 @@ MonoBehaviour:
   correctWeight: 60
   wrongColour: {fileID: 201654067}
   rightColour: {fileID: 2084602142}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!212 &1691768243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -61425,6 +61477,10 @@ PrefabInstance:
       propertyPath: itemPickedUp
       value: 
       objectReference: {fileID: 1618278690}
+    - target: {fileID: 2306667903438398290, guid: 16df82a5b642f464eafca3450c4ef9e8, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 2306667903438398290, guid: 16df82a5b642f464eafca3450c4ef9e8, type: 3}
       propertyPath: itemPickedUpUI
       value: 
@@ -103984,6 +104040,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 10
   startPosition: {x: 0, y: 0, z: 0}
+  soundManager: {fileID: 0}
+  soundThreshold: 0.1
 --- !u!212 &1899842286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -105269,6 +105327,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1618278690}
     - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
+    - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
       propertyPath: itemPickedUpUI
       value: 
       objectReference: {fileID: 1774735107}
@@ -106209,6 +106271,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1618278690}
     - target: {fileID: 2306667903438398290, guid: 16df82a5b642f464eafca3450c4ef9e8, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
+    - target: {fileID: 2306667903438398290, guid: 16df82a5b642f464eafca3450c4ef9e8, type: 3}
       propertyPath: itemPickedUpUI
       value: 
       objectReference: {fileID: 1774735107}
@@ -106444,6 +106510,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1618278690}
     - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
+    - target: {fileID: 2300876480326817845, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
       propertyPath: itemPickedUpUI
       value: 
       objectReference: {fileID: 1774735107}
@@ -106598,6 +106668,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1618278690}
     - target: {fileID: 2842620602094870283, guid: 2a242a849fc88ed40b0e2e503cf2bf6a, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
+    - target: {fileID: 2842620602094870283, guid: 2a242a849fc88ed40b0e2e503cf2bf6a, type: 3}
       propertyPath: itemPickedUpUI
       value: 
       objectReference: {fileID: 1774735107}
@@ -106720,6 +106794,10 @@ PrefabInstance:
       propertyPath: itemPickedUp
       value: 
       objectReference: {fileID: 1618278690}
+    - target: {fileID: 7286828127925991792, guid: a02e44d6d3f2eff47879d5867236fb2a, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1178055394}
     - target: {fileID: 7286828127925991792, guid: a02e44d6d3f2eff47879d5867236fb2a, type: 3}
       propertyPath: itemPickedUpUI
       value: 
