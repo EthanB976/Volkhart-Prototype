@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6818849914382535578, guid: 3e9a0c266e8b41143a96ee88796fd2c2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7565152177453533093, guid: 3e9a0c266e8b41143a96ee88796fd2c2, type: 3}
       propertyPath: m_Name
       value: Melee Alien Variant

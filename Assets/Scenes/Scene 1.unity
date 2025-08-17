@@ -105500,6 +105500,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8340454451585995377, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
       propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8660543806382673740, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130488930399127387, guid: a04705264e06b0b428d1cae37ac95f05, type: 3}
+      propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 815858242103069396, guid: 88125bd684f51b64e962874d93fd13b9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 973813799537676734, guid: 88125bd684f51b64e962874d93fd13b9, type: 3}
       propertyPath: m_Name
       value: Slime Enemy Variant
