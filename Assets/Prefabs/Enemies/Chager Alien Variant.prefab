@@ -25,16 +25,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4835148159824983180}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.69}
-  m_LocalScale: {x: 0.20680706, y: 0.2586743, z: 0.20680706}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.20525979}
+  m_LocalScale: {x: 0.044217885, y: 0.055307735, z: 0.044217885}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6007706247007535133}
+  m_Father: {fileID: 1832269964373779622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.897, y: 5.083997}
+  m_AnchoredPosition: {x: 0.011330605, y: 0.29826784}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &2212500874400694940
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfccbd99e0a92a04c922f38bae974332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  cameras: {fileID: 0}
   target: {fileID: 1832269964373779622}
   offSet: {x: 0, y: 2, z: 0}
 --- !u!1001 &6045419673826606123
@@ -184,7 +184,7 @@ PrefabInstance:
     - {fileID: 8894237199645129875, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 52367718305774646, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5370581016929523853, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3342664289617748676}
     m_AddedComponents:
@@ -216,11 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60606c7b31c1dc45a8bd3b3646a0b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &6007706247007535133 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 52367718305774646, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
-  m_PrefabInstance: {fileID: 6045419673826606123}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9166104880549641641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3229414063166783874, guid: a79feb91dc26683459064e2d0ef03309, type: 3}
@@ -239,7 +234,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderRange: 10
-  wanderTimer: 10
   wanderTarget: {x: 0, y: 0}
   isWaiting: 0
   hasTarget: 0
@@ -275,3 +269,4 @@ MonoBehaviour:
   isPreparingCharging: 0
   alienBase: {fileID: 5358837004655783394}
   warning: {fileID: 4835148159824983180}
+  soundManager: {fileID: 0}

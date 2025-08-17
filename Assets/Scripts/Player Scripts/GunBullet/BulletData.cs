@@ -46,7 +46,21 @@ public class BulletData : MonoBehaviour
         if (other.tag == "Enemy")
         {
             other.GetComponent<AlienBase>().TakeDamage(bulletDamage);
-            Debug.Log("Enemy Hit");
+
+            Rigidbody2D enemyrigidbody = other.GetComponent<Rigidbody2D>();
+
+            if (enemyrigidbody != null)
+            {
+                Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
+                float knockForce = 5f;
+
+                enemyrigidbody.AddForce(knockbackDirection * knockForce, ForceMode2D.Impulse);
+            }
+        }
+
+        if (other.tag == "Slime")
+        {
+            other.GetComponent<AlienBases>().TakeDamage(bulletDamage);
 
             Rigidbody2D enemyrigidbody = other.GetComponent<Rigidbody2D>();
 

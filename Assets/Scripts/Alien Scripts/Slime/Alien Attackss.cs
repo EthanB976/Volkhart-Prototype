@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class AlienAttacks : MonoBehaviour
+public class AlienAttackss : MonoBehaviour
 {
     [SerializeField] private float Damage = 5f;
     public Rigidbody2D Rigidbody2D;
-    [SerializeField] private float knockBack = 8f;
 
-    [SerializeField] AlienBase alienBase;
+    [SerializeField] AlienBases alienBase;
 
     private void Start()
     {
-        alienBase = GetComponent<AlienBase>();
+        alienBase = GetComponent<AlienBases>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -25,7 +24,8 @@ public class AlienAttacks : MonoBehaviour
             if (enemyrigidbody != null)
             {
                 Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
-                enemyrigidbody.AddForce(knockbackDirection * knockBack, ForceMode2D.Impulse);
+                float knockForce = 8f;
+                enemyrigidbody.AddForce(knockbackDirection * knockForce, ForceMode2D.Impulse);
 
                 StartCoroutine(alienBase.SlimeDamage(0.5f));
             }

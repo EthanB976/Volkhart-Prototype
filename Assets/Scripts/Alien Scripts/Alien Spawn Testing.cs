@@ -29,6 +29,5 @@ public class AlienSpawnTesting : MonoBehaviour
     public void SpawnEnemy()
     {
         Instantiate(enemyPrefab, spawnObject.transform);
-        Debug.Log("Spawned Enemy");
     }
 }
