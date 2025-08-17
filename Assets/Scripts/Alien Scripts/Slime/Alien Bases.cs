@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class AlienBase : MonoBehaviour
+public class AlienBases : MonoBehaviour
 {
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
@@ -35,6 +35,7 @@ public class AlienBase : MonoBehaviour
         health -= damage;
         enemyHealthBar.value = health;
         soundManager.DamageAlien();
+        Alien.SetTrigger("slimeDamaged");
         StartCoroutine(SlimeDamage(0.5f));
         if (health <= 0)
         {
@@ -56,9 +57,12 @@ public class AlienBase : MonoBehaviour
 
     public IEnumerator SlimeDeath()
     {
+        Alien.SetTrigger("slimeDeath");
         rb.linearVelocity = Vector3.zero;
-        enemyHealthBar.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.5f);
+
+        enemyHealthBar.gameObject.SetActive(false);
+
         Destroy(gameObject);
     }
 

@@ -765,7 +765,6 @@ MonoBehaviour:
   weight: 60
   startPosition: {x: 0, y: 0, z: 0}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!212 &102043115
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1518,6 +1517,10 @@ PrefabInstance:
     - target: {fileID: 8218054749877468444, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218054749877468444, guid: 3cad0be967933194cb066f9b489b402c, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2391,7 +2394,6 @@ MonoBehaviour:
   wrongColour: {fileID: 993483593}
   rightColour: {fileID: 1132948054}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!212 &274847359
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4046,7 +4048,6 @@ MonoBehaviour:
   cursor: {fileID: 1359943762}
   typeWriteEffect: {fileID: 1899192775}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!4 &507452567
 Transform:
   m_ObjectHideFlags: 0
@@ -23322,7 +23323,6 @@ MonoBehaviour:
   selectedItem: {fileID: 0}
   inventoryUI: {fileID: 782992933}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!4 &880203917
 Transform:
   m_ObjectHideFlags: 0
@@ -25078,7 +25078,6 @@ MonoBehaviour:
   weight: 20
   startPosition: {x: 0, y: 0, z: 0}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!212 &1051969860
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25232,7 +25231,6 @@ MonoBehaviour:
   wrongColour: {fileID: 1046582688}
   rightColour: {fileID: 1187807989}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!212 &1066236986
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59549,7 +59547,6 @@ MonoBehaviour:
   wrongColour: {fileID: 1534486941}
   rightColour: {fileID: 781964784}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!212 &1558148394
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -60823,7 +60820,6 @@ MonoBehaviour:
   weight: 7
   startPosition: {x: 0, y: 0, z: 0}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!212 &1677733743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -60977,7 +60973,6 @@ MonoBehaviour:
   wrongColour: {fileID: 201654067}
   rightColour: {fileID: 2084602142}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!212 &1691768243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -105282,7 +105277,6 @@ MonoBehaviour:
   weight: 10
   startPosition: {x: 0, y: 0, z: 0}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!212 &1899842286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106432,7 +106426,6 @@ MonoBehaviour:
   inventoryManager: {fileID: 880203916}
   door: {fileID: 1495528190}
   soundManager: {fileID: 1178055394}
-  soundThreshold: 0.1
 --- !u!61 &2040493227
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107284,13 +107277,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 301167675652024253, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      propertyPath: alienBase
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: m_Name
       value: Slime Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Slime
       objectReference: {fileID: 0}
     - target: {fileID: 1712509812029383284, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: m_TagString
@@ -107300,6 +107297,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1167236089}
+    - target: {fileID: 4702004376801743456, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      propertyPath: alienBase
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4702004376801743456, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
       propertyPath: Rigidbody2D
       value: 
@@ -107352,11 +107353,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9110500869299033510, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      propertyPath: alienBase
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110500869299033510, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      propertyPath: moveToPlayer
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6157234112623598731, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+    - {fileID: 301167675652024253, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+    - {fileID: 9110500869299033510, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+    - {fileID: 4702004376801743456, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5146220385716431211}
+    - targetCorrespondingSourceObject: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5146220385716431210}
+    - targetCorrespondingSourceObject: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5146220385716431209}
+    - targetCorrespondingSourceObject: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5146220385716431208}
   m_SourcePrefab: {fileID: 100100000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+--- !u!114 &438831121184753135 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1347808128475480174, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+  m_PrefabInstance: {fileID: 438831121184753134}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &438831121184753136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1518907974389831000, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+  m_PrefabInstance: {fileID: 438831121184753134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &438831121184753137 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6936005367492017143, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+  m_PrefabInstance: {fileID: 438831121184753134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &438831121184753138 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5917014995552649016, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
+  m_PrefabInstance: {fileID: 438831121184753134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &581715244042343419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108283,6 +108334,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8236060207123272796, guid: b496c033960c0b94b9bc838400e8ac77, type: 3}
   m_PrefabInstance: {fileID: 438831121184753134}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5146220385716431208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438831121184753136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b38c73302a856c45b08ba375d2cef55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  targetDetection: 5
+  playerTransform: {fileID: 5146220385716431207}
+  alienBase: {fileID: 5146220385716431211}
+  rb: {fileID: 438831121184753138}
+  speed: 5
+  movingToPlayer: 0
+--- !u!114 &5146220385716431209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438831121184753136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09275866a844cb54aba3735542773416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRange: 2
+  wanderTarget: {x: 0, y: 0}
+  isWaiting: 0
+  hasTarget: 0
+  stop: 0
+  rb: {fileID: 438831121184753138}
+  speed: 5
+  alienBase: {fileID: 5146220385716431211}
+  moveToPlayer: {fileID: 5146220385716431208}
+--- !u!114 &5146220385716431210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438831121184753136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396dfd21c781c26498b266492c810fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
+  Rigidbody2D: {fileID: 438831121184753138}
+  alienBase: {fileID: 5146220385716431211}
+--- !u!114 &5146220385716431211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438831121184753136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a894e809ecd0d7d47bf7bc62c3161a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  rb: {fileID: 438831121184753138}
+  Alien: {fileID: 438831121184753137}
+  stunned: 0
+  enemyHealthBar: {fileID: 438831121184753135}
+  soundManager: {fileID: 1178055394}
+  healthBar: {fileID: 687187351}
 --- !u!4 &5760198590216513827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1702446303205994791, guid: 4263e8321d337b847a39c2a8292d1cbb, type: 3}
