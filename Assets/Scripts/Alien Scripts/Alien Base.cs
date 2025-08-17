@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +11,7 @@ public class AlienBase : MonoBehaviour
     [SerializeField] private float maxHealth;
     [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] private Animator Alien;
+    [SerializeField] private Animator alien;
     
     public bool stunned = false;
 
@@ -21,12 +21,37 @@ public class AlienBase : MonoBehaviour
 
     [SerializeField] private GameObject healthBar;
 
+    private Vector2 movement;
+
+    private float originalXScale;
+
     private void Start()
     {
         health = maxHealth;
         enemyHealthBar.maxValue = maxHealth;
         enemyHealthBar.value = health;
         healthBar.SetActive(false);
+        originalXScale = transform.localScale.x;
+    }
+
+    private void Update()
+    {
+        if (stunned)
+        {
+            return;
+        }
+        Vector2 movement = rb.linearVelocity;
+
+        // Scale speed for animator
+        float speed = movement.magnitude;
+        speed = Mathf.Clamp01(speed / 5f); // adjust 5f based on how fast alien moves
+
+        alien.SetFloat("Speed", speed);
+
+        if (movement.x > 0.01f)        // moving right
+            transform.localScale = new Vector3(Mathf.Abs(originalXScale), transform.localScale.y, transform.localScale.z);
+        else if (movement.x < -0.01f)  // moving left
+            transform.localScale = new Vector3(-Mathf.Abs(originalXScale), transform.localScale.y, transform.localScale.z);
     }
 
     public void TakeDamage(float damage)

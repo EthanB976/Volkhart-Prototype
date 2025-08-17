@@ -29,6 +29,8 @@ public class AlienBases : MonoBehaviour
         healthBar.SetActive(false);
     }
 
+   
+
     public void TakeDamage(float damage)
     {
         healthBar.SetActive(true);
