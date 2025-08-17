@@ -4,10 +4,12 @@ public class FreezeAllRigidBody : MonoBehaviour
 {
     public GameObject[] enemies;
     public LefttoRightMovement lefttoRightMovement;
+    public Rigidbody2D playerRB;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         lefttoRightMovement = FindAnyObjectByType<LefttoRightMovement>();
+
     }
 
     // Update is called once per frame
@@ -25,21 +27,17 @@ public class FreezeAllRigidBody : MonoBehaviour
             enemy.GetComponent<Animator>().enabled = false;
         }
 
-        GameObject player = GameObject.FindWithTag("Player");       
-        
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        player.GetComponent<Animator>().enabled = false;
+        playerRB.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        playerRB.GetComponent<Animator>().enabled = false;
         lefttoRightMovement.enabled = false;
 
     }
 
     public void UnfreezeAll()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-        player.GetComponent<Animator>().enabled = true;
+        playerRB.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        playerRB.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        playerRB.GetComponent<Animator>().enabled = true;
         lefttoRightMovement.enabled = true;
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");

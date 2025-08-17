@@ -11,7 +11,7 @@ public class PlayerTasks : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerTasksText.text = "Tasks: <br>- Explore further into the Volkart";
+        playerTasksText.text = "Tasks: <br>- Explore further into the Volkhart";
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class PlayerTasks : MonoBehaviour
 
     public void FixedFinalDoor()
     {
-        playerTasksText.text = "Tasks: <br>- Escape the Volkart";
+        playerTasksText.text = "Tasks: <br>- Escape the Volkhart";
     }
 
     public bool TasksFinished()
